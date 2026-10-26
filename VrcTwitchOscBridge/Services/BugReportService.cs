@@ -27,7 +27,7 @@ internal sealed class BugReportService
             Directory.CreateDirectory(BugReportsFolder);
             var filePath = Path.Combine(
                 BugReportsFolder,
-                $"bug-report-{DateTimeOffset.Now:yyyyMMdd-HHmmss}.json");
+                $"bug-report-{DateTimeOffset.Now:yyyyMMdd-HHmmss-fff}.json");
             await File.WriteAllTextAsync(filePath, json, Encoding.UTF8, cancellationToken);
             return BugReportSaveResult.Success(filePath);
         }

@@ -52,7 +52,7 @@
         <SolidColorBrush x:Key="StatusStripeReadyBrush" Color="#4ADE80" />
         <SolidColorBrush x:Key="StatusStripeWarnBrush" Color="#FBBF24" />
         <SolidColorBrush x:Key="StatusStripeOffBrush" Color="#6B7280" />
-        <SolidColorBrush x:Key="ModePillStandardBrush" Color="#F163A8" />
+        <SolidColorBrush x:Key="ModePillStandardBrush" Color="#6366F1" />
         <SolidColorBrush x:Key="ModePillWardrobeBrush" Color="#EC4899" />
         <SolidColorBrush x:Key="LiveTextReadyBrush" Color="#4ADE80" />
         <SolidColorBrush x:Key="LiveTextWarnBrush" Color="#FBBF24" />
