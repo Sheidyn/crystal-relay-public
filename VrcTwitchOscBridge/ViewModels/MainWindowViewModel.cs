@@ -1036,7 +1036,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         bridgeCoordinator.AvatarScaleStatusChanged += () => RunOnUi(HandleAvatarScaleStatusChanged);
         bridgeCoordinator.FloatLimitStatusChanged += () => RunOnUi(HandleFloatLimitStatusChanged);
         bridgeCoordinator.RewardFireSaleContributionReceived += contribution => RunOnUi(() => HandleRewardFireSaleContribution(contribution));
-        bridgeCoordinator.DevFireSaleRequested += request => RunOnUi(() => HandleDevFireSaleRequest(request));
         bridgeCoordinator.PauseCommandRequested += () => RunOnUi(() => ToggleEmergencyRedeemStop());
         bridgeCoordinator.GroupToggleRequested += groupName => RunOnUi(() => ToggleRedeemGroupByName(groupName));
         bridgeCoordinator.RedeemControlRequested += (redeemName, enable) => RunOnUi(() => ToggleRedeemByName(redeemName, enable));
@@ -5582,33 +5581,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         ActivateRewardFireSaleIfGoalReached();
         QueueSave();
         return isFundingReward;
-    }
-
-    private bool HandleDevFireSaleRequest(DevFireSaleRequest request)
-    {
-        if (!isInitialized || isShuttingDown)
-        {
-            return false;
-        }
-
-        var discountPercent = Math.Clamp(request.DiscountPercent, 1, 100);
-        var durationSeconds = Math.Max(1, request.DurationSeconds);
-        var fireSale = Settings.RewardFireSale;
-
-        CancelAndDisposeQueuedCancellationSource(ref rewardFireSaleExpirationCancellation);
-        fireSale.IsEnabled = true;
-        fireSale.SaleMode = RewardFireSaleMode.Temporary;
-        fireSale.IsSaleActive = true;
-        fireSale.ActiveDiscountPercent = discountPercent;
-        fireSale.ActiveTierGoalAmount = 0;
-        fireSale.ActiveUntilUtc = DateTimeOffset.UtcNow.AddSeconds(durationSeconds);
-
-        ScheduleRewardFireSaleExpirationIfNeeded();
-        QueueSave(0);
-        QueueManagedRewardSync(0, ManagedRewardSyncReason.FireSaleChanged);
-        AppendLog(
-            $"Dev Fire Sale started by {request.UserDisplayName}: {discountPercent}% off for {durationSeconds:N0}s. Crystal Relay-owned reward prices will restore when it ends.");
-        return true;
     }
 
     private int ResolveRewardFireSaleContributionAmount(RewardFireSaleContribution contribution)

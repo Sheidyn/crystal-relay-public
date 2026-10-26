@@ -11,15 +11,6 @@ namespace VrcTwitchOscBridge.Tests;
 public sealed class BridgeCoordinatorDevScaleSetTests
 {
     [Fact]
-    public void ExecuteDevSetAvatarScale_UsesAtomicEmergencyOperationStart()
-    {
-        var source = File.ReadAllText(FindSourceFile("VrcTwitchOscBridge", "Services", "BridgeCoordinator.cs"));
-        var executeBody = GetMethodBody(source, "private async Task ExecuteDevSetAvatarScaleAsync");
-
-        Assert.Contains("TryBeginAvatarScaleOperationForDevScaleSet", executeBody, StringComparison.Ordinal);
-    }
-
-    [Fact]
     public void ResumeActivity_UsesStopDrainedAdmissionGateBeforeStopClearsRuntimeState()
     {
         var source = File.ReadAllText(FindSourceFile("VrcTwitchOscBridge", "Services", "BridgeCoordinator.cs"));
@@ -57,28 +48,6 @@ public sealed class BridgeCoordinatorDevScaleSetTests
 
         Assert.True(exceptionIndex >= 0);
         Assert.True(removeIndex > exceptionIndex);
-    }
-
-    [Fact]
-    public void ExecuteDevSetAvatarScale_ObservesCancellationBeforeEmergencyInvalidation()
-    {
-        var source = File.ReadAllText(FindSourceFile("VrcTwitchOscBridge", "Services", "BridgeCoordinator.cs"));
-        var executeBody = GetMethodBody(source, "private async Task ExecuteDevSetAvatarScaleAsync");
-        var permissionIndex = executeBody.IndexOf(
-            "await TryGetAvatarScalingAllowedAsync(cancellationToken)",
-            StringComparison.Ordinal);
-        var cancellationIndex = executeBody.IndexOf(
-            "cancellationToken.ThrowIfCancellationRequested();",
-            permissionIndex,
-            StringComparison.Ordinal);
-        var operationIndex = executeBody.IndexOf(
-            "TryBeginAvatarScaleOperationForDevScaleSet",
-            permissionIndex,
-            StringComparison.Ordinal);
-
-        Assert.True(permissionIndex >= 0);
-        Assert.True(cancellationIndex > permissionIndex);
-        Assert.True(operationIndex > cancellationIndex);
     }
 
     [Fact]
@@ -631,40 +600,6 @@ public sealed class BridgeCoordinatorDevScaleSetTests
     }
 
     [Fact]
-    public void TemporaryDevAvatarScaleCommands_CaptureGenerationBeforePermissionAwait()
-    {
-        var source = File.ReadAllText(FindSourceFile("VrcTwitchOscBridge", "Services", "BridgeCoordinator.cs"));
-        var methodNames = new[]
-        {
-            "private async Task ExecuteDevRelativeAvatarScaleAsync",
-            "private async Task ExecuteDevRandomAvatarScaleAsync"
-        };
-
-        foreach (var methodName in methodNames)
-        {
-            var methodBody = GetMethodBody(source, methodName);
-            var captureIndex = methodBody.IndexOf(
-                "var runtimeGeneration = GetAvatarScaleRuntimeGeneration();",
-                StringComparison.Ordinal);
-            var permissionAwaitIndex = methodBody.IndexOf(
-                "await TryGetAvatarScalingAllowedAsync(cancellationToken)",
-                StringComparison.Ordinal);
-            var permissionFenceIndex = methodBody.IndexOf(
-                "if (!IsAvatarScaleRuntimeGenerationCurrent(runtimeGeneration))",
-                permissionAwaitIndex,
-                StringComparison.Ordinal);
-            var currentHeightIndex = methodBody.IndexOf(
-                "var previousHeight = await TryGetCurrentAvatarHeightAsync",
-                StringComparison.Ordinal);
-
-            Assert.True(captureIndex >= 0, methodName);
-            Assert.True(permissionAwaitIndex > captureIndex, methodName);
-            Assert.True(permissionFenceIndex > permissionAwaitIndex, methodName);
-            Assert.True(currentHeightIndex > permissionFenceIndex, methodName);
-        }
-    }
-
-    [Fact]
     public async Task TryCreateAvatarScaleCarryoverSnapshot_DoesNotInsertPendingRestoreState()
     {
         await using var coordinator = CreateCoordinator();
@@ -783,71 +718,6 @@ public sealed class BridgeCoordinatorDevScaleSetTests
         Assert.Equal(
             GetProperty(operation!, "OperationId"),
             GetProperty(GetField(coordinator, "activeAvatarScaleOperation"), "OperationId"));
-    }
-
-    [Theory]
-    [InlineData(0.001, 0.01)]
-    [InlineData(1.6, 1.6)]
-    [InlineData(12000, 10000)]
-    public void ClampDevAvatarScaleHeight_UsesDeveloperRange(double input, double expected)
-    {
-        var method = typeof(BridgeCoordinator).GetMethod(
-            "ClampDevAvatarScaleHeight",
-            BindingFlags.Static | BindingFlags.NonPublic)!;
-
-        var actual = (double)method.Invoke(null, [input])!;
-
-        Assert.Equal(expected, actual, precision: 6);
-    }
-
-    [Fact]
-    public void ExecuteDevSetAvatarScale_UsesVrChatScalingPermissionGate()
-    {
-        var source = File.ReadAllText(FindSourceFile("VrcTwitchOscBridge", "Services", "BridgeCoordinator.cs"));
-        var methodBlock = GetMethodBody(source, "private async Task ExecuteDevSetAvatarScaleAsync");
-
-        Assert.Contains("TryGetAvatarScalingAllowedAsync", methodBlock, StringComparison.Ordinal);
-        Assert.Contains("if (scalingAllowed == false)", methodBlock, StringComparison.Ordinal);
-        Assert.Contains("/avatar/eyeheightscalingallowed", methodBlock, StringComparison.Ordinal);
-
-        var deniedGuardStart = methodBlock.IndexOf(
-            "if (scalingAllowed == false)",
-            StringComparison.Ordinal);
-        Assert.True(deniedGuardStart >= 0);
-
-        var deniedGuardOpeningBrace = methodBlock.IndexOf('{', deniedGuardStart);
-        var deniedGuardClosingBrace = methodBlock.IndexOf('}', deniedGuardOpeningBrace);
-        var deniedGuard = methodBlock[deniedGuardOpeningBrace..(deniedGuardClosingBrace + 1)];
-        var returnIndex = deniedGuard.IndexOf("return;", StringComparison.Ordinal);
-        var operationIndex = methodBlock.IndexOf(
-            "TryBeginAvatarScaleOperationForDevScaleSet",
-            deniedGuardStart,
-            StringComparison.Ordinal);
-        var sendIndex = methodBlock.IndexOf(
-            "SendAvatarHeightForOperationAsync",
-            deniedGuardStart,
-            StringComparison.Ordinal);
-
-        Assert.True(returnIndex >= 0, "The permission-denied guard must return without starting the operation.");
-        Assert.True(operationIndex > deniedGuardStart, "The operation start must remain after the permission gate.");
-        Assert.True(sendIndex > deniedGuardStart, "The OSC send path must remain after the permission gate.");
-        Assert.True(
-            deniedGuardOpeningBrace + returnIndex < operationIndex,
-            "The permission-denied return must happen before the operation start.");
-        Assert.True(
-            deniedGuardOpeningBrace + returnIndex < sendIndex,
-            "The permission-denied return must happen before the OSC send path.");
-    }
-
-    [Fact]
-    public void ExecuteDevSetAvatarScale_DoesNotScheduleRestoreOrMutateRules()
-    {
-        var source = File.ReadAllText(FindSourceFile("VrcTwitchOscBridge", "Services", "BridgeCoordinator.cs"));
-        var methodBlock = GetMethodBody(source, "private async Task ExecuteDevSetAvatarScaleAsync");
-
-        Assert.DoesNotContain("ScheduleAvatarScaleRestoreSequence", methodBlock, StringComparison.Ordinal);
-        Assert.DoesNotContain("RestoreHeightMeters =", methodBlock, StringComparison.Ordinal);
-        Assert.DoesNotContain("RestoreMode =", methodBlock, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -1010,43 +880,6 @@ public sealed class BridgeCoordinatorDevScaleSetTests
         Assert.Contains("expectedRuntimeGeneration: runtimeGeneration", methodBody, StringComparison.Ordinal);
         Assert.Contains("shouldContinue: () => IsAvatarScaleRuntimeGenerationCurrent(runtimeGeneration)", methodBody, StringComparison.Ordinal);
         Assert.Contains("runtimeGeneration))", methodBody, StringComparison.Ordinal);
-    }
-
-    [Fact]
-    public void TemporaryDevAvatarScaleOperations_RejectStaleGenerationBeforeStarting()
-    {
-        var source = File.ReadAllText(FindSourceFile("VrcTwitchOscBridge", "Services", "BridgeCoordinator.cs"));
-        var relativeBody = GetMethodBody(source, "private async Task ExecuteDevRelativeAvatarScaleAsync");
-        var randomBody = GetMethodBody(source, "private async Task ExecuteDevRandomAvatarScaleAsync");
-
-        Assert.Contains("expectedRuntimeGeneration: runtimeGeneration", relativeBody, StringComparison.Ordinal);
-        Assert.Contains("expectedRuntimeGeneration: runtimeGeneration", randomBody, StringComparison.Ordinal);
-    }
-
-    [Fact]
-    public void TemporaryDevAvatarScaleOperations_FenceHeightQueryBeforePause()
-    {
-        var source = File.ReadAllText(FindSourceFile("VrcTwitchOscBridge", "Services", "BridgeCoordinator.cs"));
-        var relativeBody = GetMethodBody(source, "private async Task ExecuteDevRelativeAvatarScaleAsync");
-        var randomBody = GetMethodBody(source, "private async Task ExecuteDevRandomAvatarScaleAsync");
-        var pauseBody = GetMethodBody(source, "private PausedAvatarScaleTimerSnapshot? PauseActiveAvatarScaleTimerForDev");
-        var queryBody = GetMethodBody(source, "private async Task<double?> TryGetCurrentAvatarHeightAsync");
-        var normalizedSource = NormalizeWhitespace(source);
-
-        Assert.Contains("TryGetCurrentAvatarHeightAsync(cancellationToken, runtimeGeneration)", relativeBody, StringComparison.Ordinal);
-        Assert.Contains("TryGetCurrentAvatarHeightAsync(cancellationToken, runtimeGeneration)", randomBody, StringComparison.Ordinal);
-        Assert.Contains("PauseActiveAvatarScaleTimerForDev(devRuleName, devDuration, runtimeGeneration)", relativeBody, StringComparison.Ordinal);
-        Assert.Contains("PauseActiveAvatarScaleTimerForDev(devRuleName, devDuration, runtimeGeneration)", randomBody, StringComparison.Ordinal);
-        Assert.Contains(
-            "private PausedAvatarScaleTimerSnapshot? PauseActiveAvatarScaleTimerForDev( string devRuleName, TimeSpan devDuration, long expectedRuntimeGeneration)",
-            normalizedSource,
-            StringComparison.Ordinal);
-        Assert.Contains("avatarScaleRuntimeGeneration != expectedRuntimeGeneration", pauseBody, StringComparison.Ordinal);
-        Assert.Contains(
-            "private async Task<double?> TryGetCurrentAvatarHeightAsync( CancellationToken cancellationToken, long? expectedRuntimeGeneration = null)",
-            normalizedSource,
-            StringComparison.Ordinal);
-        Assert.Contains("avatarScaleRuntimeGeneration != expectedGeneration", queryBody, StringComparison.Ordinal);
     }
 
     [Fact]

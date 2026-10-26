@@ -252,7 +252,6 @@
     <Compile Include="Services\ChatboxRelayModerationFilter.cs" />
     <Compile Include="Services\CrashLogService.cs" />
     <Compile Include="Services\DebugLogService.cs" />
-    <Compile Include="Services\DevChatCommandParser.cs" />
     <Compile Include="Services\DesktopInputLockService.cs" />
     <Compile Include="Services\EmbeddedMediaCacheService.cs" />
     <Compile Include="Services\FoomaInteractionConfigImporter.cs" />
