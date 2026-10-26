@@ -3,6 +3,15 @@ Crystal Relay Changelog
 
 Newest updates appear first. This changelog focuses on the changes users will notice most.
 
+v3.2.1
+- Removed the developer-only !screm chat commands that could resize or move your avatar and start a fire sale on your rewards from chat.
+- Removed the Live Feedback Heartbeat. The app no longer tells any server when you go live.
+- The world command now runs locally. World and creator IDs are no longer sent to a remote guard.
+- Bug reports are saved to a file in %LOCALAPPDATA%\CrystalRelay\BugReports instead of being uploaded.
+- The hosted Ko-fi relay is now off by default. Turning it on shows a warning first, since tips pass through a server outside this project.
+- Update checks now only look at this fork's releases.
+- The default Void Crystal theme is now red, and the app has a new icon.
+
 v3.2.0 bug fix 8
 - Fixed Avatar Swap cards below the available window height becoming unreachable. The left Avatar Swaps card list now scrolls independently while the Return Avatar bar and right-side editor stay visible.
 - Added layout regression coverage for the independent card-pane scrollbar while preserving wrapped cards and preventing horizontal overflow.
