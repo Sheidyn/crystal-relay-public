@@ -9605,6 +9605,7 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
             WorldCommandBlacklistRefreshStatus.Ready => TF("Protected world guard is ready: {0} world ID(s), {1} creator ID rule(s).", result.WorldEntryCount, result.CreatorEntryCount),
             WorldCommandBlacklistRefreshStatus.InvalidResponse => T("Protected world guard returned an invalid status. World sharing will stay protected."),
             WorldCommandBlacklistRefreshStatus.RequestFailed => T("Protected world guard could not be reached. World sharing will stay protected."),
+            WorldCommandBlacklistRefreshStatus.Disabled => T("World sharing runs locally. Only public VRChat worlds are shared, and nothing is sent to the developer."),
             _ => T("Checking protected world guard...")
         };
     }

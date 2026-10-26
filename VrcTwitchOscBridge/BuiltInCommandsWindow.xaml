@@ -675,40 +675,6 @@
                                                        FontWeight="SemiBold"
                                                        TextWrapping="Wrap" />
                                         </Grid>
-                                         <Border Height="1"
-                                                 Margin="0,18,0,16"
-                                                 Background="{DynamicResource InputBorderBrush}" />
-                                         <TextBlock Text="{loc:Translate 'Protected World Guard'}"
-                                                    FontFamily="{DynamicResource HeadingFontFamily}"
-                                                    FontSize="15"
-                                                    FontWeight="Bold"
-                                                    TextWrapping="Wrap" />
-                                         <TextBlock Margin="0,6,0,12"
-                                                    Text="{loc:Translate 'Crystal Relay checks a private Cloudflare guard before sharing world links. The guard only returns whether the world is protected.'}"
-                                                    Foreground="{DynamicResource MutedBrush}"
-                                                    TextWrapping="Wrap" />
-                                         <TextBlock Margin="0,0,0,8"
-                                                    Text="{loc:Translate 'Protected World Guard is always active and cannot be disabled.'}"
-                                                    Foreground="{DynamicResource MutedBrush}"
-                                                    FontStyle="Italic"
-                                                    TextWrapping="Wrap" />
-                                         <Grid Margin="0,4,0,0">
-                                             <Grid.ColumnDefinitions>
-                                                 <ColumnDefinition Width="Auto" />
-                                                 <ColumnDefinition Width="*" />
-                                             </Grid.ColumnDefinitions>
-                                             <Button Grid.Column="0"
-                                                     MinWidth="138"
-                                                     Style="{StaticResource PrimaryButtonStyle}"
-                                                     Content="{loc:Translate 'Check Protected Guard'}"
-                                                     Command="{Binding RefreshWorldCommandBlacklistCommand}" />
-                                             <TextBlock Grid.Column="1"
-                                                        Margin="12,0,0,0"
-                                                        VerticalAlignment="Center"
-                                                        Text="{Binding WorldCommandBlacklistStatusText}"
-                                                        Foreground="{DynamicResource MutedBrush}"
-                                                        TextWrapping="Wrap" />
-                                         </Grid>
                                      </StackPanel>
 
                                     <StackPanel x:Name="TriggerInfoCommandPanel"

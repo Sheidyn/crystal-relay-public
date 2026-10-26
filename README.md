@@ -91,8 +91,8 @@ Recent releases include larger systems shaped by streamer feedback:
 - **Avatar Scaling improvements**: redesigned manager UI, compact mode-driven setup, Multiplier direction option, bypasses world limits with custom Min/Max.
 - **Activity + Moderation drawer**: quick timeouts, ban, purge, message delete, and suspicious-user controls alongside recent Twitch activity and chatter badges.
 - **Power Up Redeem Library**: Twitch Custom Power-ups paid with Bits can link existing Twitch rewards, run OSC actions, Avatar Change, Avatar Roulette, movement, and Avatar Scaling.
-- **Protected World Guard**: always-on protection managed through a secure web admin panel with search and name labels for guarded worlds and creators.
-- **Cash Payments and Ko-fi hosted relay**: StreamElements, Streamlabs, and Ko-fi tips can trigger actions; Ko-fi relay works without Cloudflare Tunnel, ngrok, or router forwarding.
+- **World sharing**: the world command only shares public VRChat worlds. The remote Protected World Guard was removed in this fork, so world and creator IDs are never sent to the developer.
+- **Cash Payments**: StreamElements, Streamlabs, and Ko-fi tips can trigger actions. Ko-fi uses the local webhook listener by default; the original developer's hosted relay is an opt-in option with a privacy warning.
 
 ## Trigger Areas and Actions
 
