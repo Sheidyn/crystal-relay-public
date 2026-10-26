@@ -54,7 +54,7 @@ Crystal Relay connects Twitch events to VRChat through local OSC and OSCQuery co
 | **Managed rewards** | Twitch reward creation, adoption, syncing, cap-safe recycling, cooldown-aware state, per-redeem colors |
 | **Chat tools** | Built-in Twitch Chatbox, optional VRChat chat relay, optional bot/broadcaster trigger announcements |
 | **VRChat tools** | VRChat login with 2FA, avatar cache, OSC parameter cache, OSCQuery discovery |
-| **App polish** | Built-in themes, community-ready localization, About-page live cards, update alerts, in-app bug reports, crash logging |
+| **App polish** | Built-in themes, community-ready localization, About-page live cards, update alerts, local bug report files, crash logging |
 
 ## Main Features
 
@@ -70,7 +70,7 @@ Crystal Relay connects Twitch events to VRChat through local OSC and OSCQuery co
 - Avatar-scoped Bits + Subs supporter triggers, including Bits outfit names with fuzzy matching for casing, spacing, and spelling mistakes
 - Optional bot info messages for supporter overrides
 - Avatar-aware redeem libraries for avatar-specific and global behaviors
-- In-app bug reporting with opt-in sanitized logs
+- Bug reports saved as local files with opt-in sanitized logs (nothing is sent anywhere)
 - Built-in Twitch Chatbox with theme-aware settings and optional VRChat relay
 - Theme support across the main window, dialogs, and chatbox
 - Built-in language support for English, Spanish, Japanese, German, French, Portuguese (Brazil), Swedish, Italian, Simplified Chinese, Traditional Chinese, Korean, Russian, Polish, and Thai

@@ -679,7 +679,7 @@
                                        FontWeight="Bold" />
 
                             <TextBlock Margin="0,10,0,0"
-                                       Text="{loc:Translate 'Send a bug report to the Crystal Relay GitHub issues page without needing a GitHub account.'}"
+                                       Text="{loc:Translate 'Save a bug report to a file on this PC. Nothing is sent anywhere.'}"
                                        Foreground="{DynamicResource MutedBrush}"
                                        TextWrapping="Wrap" />
 
@@ -813,7 +813,7 @@
                                               Margin="0,12,0,0"
                                               Content="{loc:Translate 'Include crash log'}" />
                                     <TextBlock Margin="0,4,0,0"
-                                               Text="{loc:Translate 'Crash logs are sanitized before sending.'}"
+                                               Text="{loc:Translate 'Crash logs are sanitized before saving.'}"
                                                Foreground="{DynamicResource MutedBrush}"
                                                FontSize="12"
                                                TextWrapping="Wrap" />
@@ -822,7 +822,7 @@
                                               Margin="0,8,0,0"
                                               Content="{loc:Translate 'Include activity log'}" />
                                     <TextBlock Margin="0,4,0,0"
-                                               Text="{loc:Translate 'Recent activity log entries, sanitized before sending.'}"
+                                               Text="{loc:Translate 'Recent activity log entries, sanitized before saving.'}"
                                                Foreground="{DynamicResource MutedBrush}"
                                                FontSize="12"
                                                TextWrapping="Wrap" />
@@ -831,7 +831,7 @@
                                               Margin="0,8,0,0"
                                               Content="{loc:Translate 'Include debug logs'}" />
                                     <TextBlock Margin="0,4,0,0"
-                                               Text="{loc:Translate 'Recent debug log lines, sanitized before sending.'}"
+                                               Text="{loc:Translate 'Recent debug log lines, sanitized before saving.'}"
                                                Foreground="{DynamicResource MutedBrush}"
                                                FontSize="12"
                                                TextWrapping="Wrap" />
@@ -859,7 +859,7 @@
                                         Style="{StaticResource SecondaryButtonStyle}"
                                         IsCancel="True"
                                         Click="OnCancelClicked" />
-                                <Button Content="{loc:Translate 'Send Report'}"
+                                <Button Content="{loc:Translate 'Save Report'}"
                                         Width="132"
                                         Style="{StaticResource PrimaryButtonStyle}"
                                         IsDefault="True"

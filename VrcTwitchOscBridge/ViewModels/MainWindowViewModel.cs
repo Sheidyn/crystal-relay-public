@@ -18351,21 +18351,21 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
             debugLog,
             crashLog);
 
-        AppendLog("Sending bug report to Crystal Relay's bug report service.");
-        var result = await bugReportService.SubmitAsync(submission);
-        if (result.Succeeded && !string.IsNullOrWhiteSpace(result.IssueUrl))
+        // Bug reports stay on this PC; nothing is sent to the developer.
+        var result = await bugReportService.SaveLocallyAsync(submission);
+        if (result.Succeeded && !string.IsNullOrWhiteSpace(result.FilePath))
         {
-            AppendLog($"Bug report submitted: {result.IssueUrl}");
-            var shouldOpenIssue = ThemedDialogWindow.ShowYesNo(
+            AppendLog($"Bug report saved locally: {result.FilePath}");
+            var shouldOpenFolder = ThemedDialogWindow.ShowYesNo(
                 Application.Current?.MainWindow,
                 SelectedTheme,
-                T("Bug report sent"),
-                $"{T("Crystal Relay created a GitHub issue for this report.")}{Environment.NewLine}{Environment.NewLine}{result.IssueUrl}",
-                T("Open Issue"),
+                "Bug report saved",
+                $"The bug report was saved on this PC. Nothing was sent anywhere.{Environment.NewLine}{Environment.NewLine}{result.FilePath}",
+                "Open Folder",
                 T("Close"));
-            if (shouldOpenIssue)
+            if (shouldOpenFolder)
             {
-                OpenUri(result.IssueUrl);
+                OpenUri(BugReportService.BugReportsFolder);
             }
 
             if (dialog.IncludeCrashLog)
@@ -18377,20 +18377,14 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         }
 
         var errorMessage = string.IsNullOrWhiteSpace(result.ErrorMessage)
-            ? T("The bug report service did not accept the report.")
+            ? "Crystal Relay could not save the bug report."
             : result.ErrorMessage;
-        AppendLog($"Bug report could not be sent: {errorMessage}");
-        var shouldOpenFallback = ThemedDialogWindow.ShowYesNo(
+        AppendLog($"Bug report could not be saved: {errorMessage}");
+        ThemedDialogWindow.ShowOk(
             Application.Current?.MainWindow,
             SelectedTheme,
-            T("Bug report could not be sent"),
-            $"{errorMessage}{Environment.NewLine}{Environment.NewLine}{T("Open the GitHub Issues page instead?")}",
-            T("Open GitHub Issues"),
-            T("Close"));
-        if (shouldOpenFallback)
-        {
-            OpenUri(BugReportService.GitHubIssuesUrl);
-        }
+            "Bug report could not be saved",
+            errorMessage);
     }
 
     private string GetThemeDisplayName()
