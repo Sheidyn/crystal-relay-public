@@ -179,17 +179,16 @@ Cash Payments let StreamElements tips, Streamlabs donations, and Ko-fi tips run 
 - Supported actions include avatar parameters, Set Trigger outfit groups, Avatar Change, Avatar Roulette, and Avatar Scaling.
 - Amount filters use the provider amount and currency exactly as the provider sends them. Crystal Relay does not convert currencies in this system.
 - Cash-triggered avatar changes count as paid support actions, so they can bypass Avatar Scaling's optional avatar-change blocker like Bits and Subs overrides.
-- Provider failures stay isolated. A Ko-fi relay issue should not stop Twitch, OSC, VRChat, StreamElements, or Streamlabs behavior.
+- Provider failures stay isolated. A Ko-fi webhook issue should not stop Twitch, OSC, VRChat, StreamElements, or Streamlabs behavior.
 
-### Ko-fi Hosted Relay Privacy
+### Ko-fi Connection Options
 
-Ko-fi sends payment automation through webhooks, which means it needs a public HTTPS URL. Crystal Relay's hosted Ko-fi relay exists only to carry that Ko-fi webhook to your running desktop app, so streamers do not need to set up Cloudflare Tunnel, ngrok, router port forwarding, or a public local server.
+Ko-fi sends payment automation through webhooks, which need a public HTTPS URL, so a Ko-fi tip always has to pass through some server before it reaches your PC.
 
-The relay does **not** save Ko-fi webhook payloads, payment history, emails, messages, verification tokens, client secrets, or payment databases. It keeps only live in-memory connection state long enough to forward a minimal tip event to your running Crystal Relay app and receive an acknowledgement. If Crystal Relay is offline, the relay returns a retry response to Ko-fi instead of storing the payment for later.
+- **Local webhook (default in this fork):** Crystal Relay listens on `127.0.0.1` (default port `47891`, path `/kofi`). Point a public URL you control (for example your own tunnel) at that listener and paste it into Ko-fi. Nothing passes through the original developer.
+- **Original developer's hosted relay (opt-in):** works with no extra setup, but your Ko-fi verification token and each tip's details pass through the original developer's server, whose code is private. Turning it on shows a warning first, and turning it off clears that consent.
 
-Crystal Relay stores your Ko-fi verification token and relay client secret locally through **Windows Credential Manager**. The hosted relay uses those secrets only to verify that the webhook belongs to your Crystal Relay setup and to deliver the trigger to the connected desktop app.
-
-Advanced users can still use the local Ko-fi webhook mode, but the hosted relay is the recommended setup for most streamers because it avoids network setup outside the app.
+Crystal Relay stores your Ko-fi verification token and relay client secret locally through **Windows Credential Manager**.
 
 ## Twitch Chatbox
 

@@ -34,7 +34,10 @@ public sealed class CashPaymentConnectionSettings : ObservableObject
     private bool streamlabsEnabled;
     private string streamlabsAccessToken = string.Empty;
     private bool koFiEnabled;
-    private KoFiConnectionMode koFiConnectionMode = KoFiConnectionMode.HostedRelay;
+    // The hosted relay belongs to the original developer, so this fork keeps it off
+    // unless the streamer accepts the relay warning.
+    private bool koFiHostedRelayWarningAccepted;
+    private KoFiConnectionMode koFiConnectionMode = KoFiConnectionMode.LocalWebhook;
     private string koFiRelayBaseUrl = DefaultKoFiRelayBaseUrl;
     private string koFiRelayChannelId = CreateKoFiRelayChannelId();
     private string koFiRelayClientSecret = CreateKoFiRelayClientSecret();
@@ -113,12 +116,36 @@ public sealed class CashPaymentConnectionSettings : ObservableObject
         }
     }
 
+    /// <summary>
+    /// True only after the streamer accepted the warning that Ko-fi tips will pass through
+    /// the original developer's relay server. Set this before KoFiConnectionMode when loading.
+    /// </summary>
+    public bool KoFiHostedRelayWarningAccepted
+    {
+        get => koFiHostedRelayWarningAccepted;
+        set
+        {
+            if (SetProperty(ref koFiHostedRelayWarningAccepted, value)
+                && !value
+                && KoFiConnectionMode == KoFiConnectionMode.HostedRelay)
+            {
+                KoFiConnectionMode = KoFiConnectionMode.LocalWebhook;
+            }
+        }
+    }
+
     public KoFiConnectionMode KoFiConnectionMode
     {
         get => koFiConnectionMode;
         set
         {
-            var normalizedValue = Enum.IsDefined(value) ? value : KoFiConnectionMode.HostedRelay;
+            var normalizedValue = Enum.IsDefined(value) ? value : KoFiConnectionMode.LocalWebhook;
+            if (normalizedValue == KoFiConnectionMode.HostedRelay && !KoFiHostedRelayWarningAccepted)
+            {
+                // Settings saved by the original app (or without consent) stay local.
+                normalizedValue = KoFiConnectionMode.LocalWebhook;
+            }
+
             if (SetProperty(ref koFiConnectionMode, normalizedValue))
             {
                 RaisePropertyChanged(nameof(KoFiUseHostedRelay));
@@ -136,8 +163,10 @@ public sealed class CashPaymentConnectionSettings : ObservableObject
             {
                 KoFiConnectionMode = KoFiConnectionMode.HostedRelay;
             }
-            else if (KoFiConnectionMode == KoFiConnectionMode.HostedRelay)
+            else
             {
+                // Turning the relay off clears consent, so turning it on again asks again.
+                KoFiHostedRelayWarningAccepted = false;
                 KoFiConnectionMode = KoFiConnectionMode.LocalWebhook;
             }
         }

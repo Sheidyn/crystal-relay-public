@@ -1550,7 +1550,9 @@ public sealed record BridgeRuntimeConfiguration(
             settings.StreamlabsEnabled,
             settings.StreamlabsAccessToken,
             settings.KoFiEnabled,
-            Enum.IsDefined(settings.KoFiConnectionMode) ? settings.KoFiConnectionMode : KoFiConnectionMode.HostedRelay,
+            settings.KoFiConnectionMode == KoFiConnectionMode.HostedRelay && settings.KoFiHostedRelayWarningAccepted
+                ? KoFiConnectionMode.HostedRelay
+                : KoFiConnectionMode.LocalWebhook,
             string.IsNullOrWhiteSpace(settings.KoFiRelayBaseUrl)
                 ? CashPaymentConnectionSettings.DefaultKoFiRelayBaseUrl
                 : settings.KoFiRelayBaseUrl.Trim().TrimEnd('/'),

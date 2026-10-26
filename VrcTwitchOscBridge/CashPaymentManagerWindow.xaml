@@ -359,9 +359,15 @@
                         <CheckBox Margin="0,10,0,0"
                                   Content="{loc:Translate 'Enable Ko-fi'}"
                                   IsChecked="{Binding CashPayments.KoFiEnabled, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- Off by default: turning it on shows the relay privacy warning first. -->
                         <CheckBox Margin="0,8,0,0"
-                                  Content="{loc:Translate 'Use Crystal Relay hosted Ko-fi relay'}"
-                                  IsChecked="{Binding CashPayments.KoFiUseHostedRelay, UpdateSourceTrigger=PropertyChanged}" />
+                                  Content="Use the original developer's hosted Ko-fi relay"
+                                  IsChecked="{Binding CashPayments.KoFiUseHostedRelay, Mode=OneWay}"
+                                  Click="OnKoFiHostedRelayClicked" />
+                        <TextBlock Margin="24,4,0,0"
+                                   Text="Off by default. When on, your Ko-fi tips and verification token pass through the original developer's server."
+                                   Foreground="{DynamicResource MutedBrush}"
+                                   TextWrapping="Wrap" />
 
                         <!-- Hosted relay section -->
                         <StackPanel Margin="0,8,0,0">

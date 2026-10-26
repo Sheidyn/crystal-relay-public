@@ -2755,6 +2755,7 @@ ChannelPointRules = [.. profile.ChannelPointRules.Select(ToPersistedRule)],
             StreamElementsAccountId = settings.StreamElementsAccountId,
             StreamlabsEnabled = settings.StreamlabsEnabled,
             KoFiEnabled = settings.KoFiEnabled,
+            KoFiHostedRelayWarningAccepted = settings.KoFiHostedRelayWarningAccepted,
             KoFiConnectionMode = settings.KoFiConnectionMode,
             KoFiRelayBaseUrl = settings.KoFiRelayBaseUrl,
             KoFiRelayChannelId = settings.KoFiRelayChannelId,
@@ -2771,10 +2772,9 @@ ChannelPointRules = [.. profile.ChannelPointRules.Select(ToPersistedRule)],
             StreamElementsAccountId = settings.StreamElementsAccountId ?? string.Empty,
             StreamlabsEnabled = settings.StreamlabsEnabled ?? false,
             KoFiEnabled = settings.KoFiEnabled ?? false,
-            KoFiConnectionMode = settings.KoFiConnectionMode
-                ?? (string.IsNullOrWhiteSpace(settings.KoFiPublicWebhookUrl)
-                    ? KoFiConnectionMode.HostedRelay
-                    : KoFiConnectionMode.LocalWebhook),
+            // Consent must be restored before the mode, or a saved HostedRelay falls back to local.
+            KoFiHostedRelayWarningAccepted = settings.KoFiHostedRelayWarningAccepted ?? false,
+            KoFiConnectionMode = settings.KoFiConnectionMode ?? KoFiConnectionMode.LocalWebhook,
             KoFiRelayBaseUrl = settings.KoFiRelayBaseUrl ?? CashPaymentConnectionSettings.DefaultKoFiRelayBaseUrl,
             KoFiRelayChannelId = settings.KoFiRelayChannelId ?? string.Empty,
             KoFiLocalPort = settings.KoFiLocalPort is >= 1 and <= 65535
@@ -3049,6 +3049,8 @@ ChannelPointRules = [.. profile.ChannelPointRules.Select(ToPersistedRule)],
         public bool? StreamlabsEnabled { get; set; }
 
         public bool? KoFiEnabled { get; set; }
+
+        public bool? KoFiHostedRelayWarningAccepted { get; set; }
 
         public KoFiConnectionMode? KoFiConnectionMode { get; set; }
 
