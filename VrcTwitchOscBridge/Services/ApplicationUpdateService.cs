@@ -37,8 +37,11 @@ public sealed record ApplicationUpdateCheckResult(
 
 public sealed class ApplicationUpdateService : IDisposable
 {
+    // Updates come only from this fork's GitHub releases, never from the original project.
+    public const string ReleaseRepository = "Sheidyn/crystal-relay-public";
+
     private static readonly Uri ReleasesEndpoint = new(
-        "https://api.github.com/repos/seluvia/crystal-relay-public/releases?per_page=100");
+        $"https://api.github.com/repos/{ReleaseRepository}/releases?per_page=100");
     private static readonly TimeSpan DefaultRequestTimeout = TimeSpan.FromSeconds(6);
 
     private readonly HttpClient httpClient;

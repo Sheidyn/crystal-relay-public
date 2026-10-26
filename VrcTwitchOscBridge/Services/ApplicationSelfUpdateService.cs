@@ -408,7 +408,10 @@ internal sealed class ApplicationSelfUpdateService : IDisposable
 
         if (!Uri.TryCreate(update.AssetDownloadUrl, UriKind.Absolute, out var uri)
             || uri.Scheme != Uri.UriSchemeHttps
-            || !string.Equals(uri.Host, "github.com", StringComparison.OrdinalIgnoreCase))
+            || !string.Equals(uri.Host, "github.com", StringComparison.OrdinalIgnoreCase)
+            || !uri.AbsolutePath.StartsWith(
+                $"/{ApplicationUpdateService.ReleaseRepository}/releases/download/",
+                StringComparison.OrdinalIgnoreCase))
         {
             throw new ApplicationSelfUpdateException("The update download URL is not a trusted GitHub HTTPS asset URL.");
         }

@@ -4,7 +4,7 @@
 
 **Windows desktop Twitch-to-VRChat control through OSC and OSCQuery.**
 
-**Want the Windows download right away?** Open the [Crystal Relay Releases page](https://github.com/seluvia/crystal-relay-public/releases), or use **Releases** on the right side of the GitHub page.
+**Want the Windows download right away?** Open the [Crystal Relay Releases page](https://github.com/Sheidyn/crystal-relay-public/releases), or use **Releases** on the right side of the GitHub page.
 
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D4?style=for-the-badge)](#build-and-run-from-source)
 [![.NET](https://img.shields.io/badge/.NET-10-512BD4?style=for-the-badge)](#build-and-run-from-source)
@@ -16,7 +16,7 @@
 
 Crystal Relay connects Twitch events to VRChat through local OSC and OSCQuery control. It is built for streamers who want Channel Point rewards, chat commands, bits, subs, follows, avatar parameters, avatar changes, movement redeems, and chatbox relay tools without turning setup into a maze.
 
-- [Download packaged releases](https://github.com/seluvia/crystal-relay-public/releases)
+- [Download packaged releases](https://github.com/Sheidyn/crystal-relay-public/releases)
 - [Watch the tutorial video](https://github.com/seluvia/crystal-relay-public/releases/download/v2.9.0/CrystalRelay-Tutorial-v2.9.0.mp4)
 - [Build and run from source](#build-and-run-from-source)
 - [Help translate Crystal Relay](TRANSLATING.md)
@@ -324,7 +324,7 @@ powershell -ExecutionPolicy Bypass -File .\Build-Crystal-Relay-Release.ps1
 
 Packaged Windows builds are published on the public GitHub Releases page:
 
-[Crystal Relay Releases](https://github.com/seluvia/crystal-relay-public/releases)
+[Crystal Relay Releases](https://github.com/Sheidyn/crystal-relay-public/releases)
 
 ## Open Source and AI Transparency
 

@@ -22,6 +22,19 @@ public sealed class ApplicationSelfUpdateBugFixTests
             ApplicationSelfUpdateService.ValidateReleaseAsset(update));
     }
 
+    [Theory]
+    [InlineData("https://github.com/seluvia/crystal-relay-public/releases/download/v3.2.0-bugfix1/CrystalRelayBugFix-v3.2.0-bugfix1-win-x64.zip")]
+    [InlineData("https://github.com/someone-else/crystal-relay-public/releases/download/v3.2.0-bugfix1/CrystalRelayBugFix-v3.2.0-bugfix1-win-x64.zip")]
+    public void ValidateReleaseAsset_RejectsDownloadsOutsideThisFork(string assetDownloadUrl)
+    {
+        var update = CreateBugFixUpdate("CrystalRelayBugFix-v3.2.0-bugfix1-win-x64.zip") with
+        {
+            AssetDownloadUrl = assetDownloadUrl
+        };
+        Assert.Throws<ApplicationSelfUpdateException>(() =>
+            ApplicationSelfUpdateService.ValidateReleaseAsset(update));
+    }
+
     [Fact]
     public void ValidateReleaseAsset_RejectsWrongBugFixAssetCasing()
     {
@@ -607,9 +620,9 @@ public sealed class ApplicationSelfUpdateBugFixTests
         BugFixSequence: 1,
         ReleaseTitle: "Crystal Relay v3.2.0 Bug Fix Push 1",
         ReleaseBody: "Fix details",
-        ReleasePageUrl: "https://github.com/seluvia/crystal-relay-public/releases/tag/v3.2.0-bugfix1",
+        ReleasePageUrl: "https://github.com/Sheidyn/crystal-relay-public/releases/tag/v3.2.0-bugfix1",
         AssetName: assetName,
-        AssetDownloadUrl: $"https://github.com/seluvia/crystal-relay-public/releases/download/v3.2.0-bugfix1/{assetName}",
+        AssetDownloadUrl: $"https://github.com/Sheidyn/crystal-relay-public/releases/download/v3.2.0-bugfix1/{assetName}",
         AssetSizeBytes: 1024,
         Sha256Digest: $"sha256:{new string('a', 64)}");
 

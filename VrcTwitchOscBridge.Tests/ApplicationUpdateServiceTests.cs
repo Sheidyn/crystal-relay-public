@@ -30,11 +30,11 @@ public sealed class ApplicationUpdateServiceTests
         Assert.Equal("Crystal Relay v3.2.0 Bug Fix Push 2", update.ReleaseTitle);
         Assert.Equal("Fix two\n- Full detail", update.ReleaseBody);
         Assert.Equal(
-            "https://github.com/seluvia/crystal-relay-public/releases/tag/v3.2.0-bugfix2",
+            "https://github.com/Sheidyn/crystal-relay-public/releases/tag/v3.2.0-bugfix2",
             update.ReleasePageUrl);
         Assert.Equal("CrystalRelayBugFix-v3.2.0-bugfix2-win-x64.zip", update.AssetName);
         Assert.Equal(
-            "https://github.com/seluvia/crystal-relay-public/releases/download/v3.2.0-bugfix2/CrystalRelayBugFix-v3.2.0-bugfix2-win-x64.zip",
+            "https://github.com/Sheidyn/crystal-relay-public/releases/download/v3.2.0-bugfix2/CrystalRelayBugFix-v3.2.0-bugfix2-win-x64.zip",
             update.AssetDownloadUrl);
         Assert.Equal(1024L, update.AssetSizeBytes);
         Assert.Equal($"sha256:{new string('a', 64)}", update.Sha256Digest);
@@ -347,7 +347,7 @@ public sealed class ApplicationUpdateServiceTests
                 ? $"Crystal Relay v3.2.0 Bug Fix Push {ExtractSequence(tag)}"
                 : tag,
             body,
-            html_url = $"https://github.com/seluvia/crystal-relay-public/releases/tag/{tag}",
+            html_url = $"https://github.com/Sheidyn/crystal-relay-public/releases/tag/{tag}",
             draft = false,
             prerelease = prerelease ?? channel == ApplicationUpdateChannel.Beta,
             published_at = "2026-07-19T00:00:00Z",
@@ -356,7 +356,7 @@ public sealed class ApplicationUpdateServiceTests
                 new
                 {
                     name = assetName,
-                    browser_download_url = $"https://github.com/seluvia/crystal-relay-public/releases/download/{tag}/{assetName}",
+                    browser_download_url = $"https://github.com/Sheidyn/crystal-relay-public/releases/download/{tag}/{assetName}",
                     size = 1024,
                     digest = $"sha256:{new string('a', 64)}"
                 }
