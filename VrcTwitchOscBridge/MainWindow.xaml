@@ -290,47 +290,47 @@
         <FontFamily x:Key="BodyFontFamily">Verdana</FontFamily>
         <FontFamily x:Key="HeadingFontFamily">Constantia</FontFamily>
         <sys:Double x:Key="HomeTitleFontSize">28</sys:Double>
-        <SolidColorBrush x:Key="WindowBackgroundBrush" po:Freeze="False" Color="#130B1E" />
-        <SolidColorBrush x:Key="PanelBrush" po:Freeze="False" Color="#CC1C132B" />
-        <SolidColorBrush x:Key="PanelSecondaryBrush" po:Freeze="False" Color="#C8241739" />
-        <SolidColorBrush x:Key="PanelHighlightBrush" po:Freeze="False" Color="#C4311C4E" />
-        <SolidColorBrush x:Key="BorderBrush" po:Freeze="False" Color="#4B2B78" />
-        <SolidColorBrush x:Key="AccentBrush" po:Freeze="False" Color="#A855F7" />
-        <SolidColorBrush x:Key="TextBrush" po:Freeze="False" Color="#F5EEFF" />
-        <SolidColorBrush x:Key="MutedBrush" po:Freeze="False" Color="#BFAFD8" />
-        <SolidColorBrush x:Key="InputBrush" po:Freeze="False" Color="#B8271A3D" />
-        <SolidColorBrush x:Key="InputBorderBrush" po:Freeze="False" Color="#5B3A8E" />
-        <SolidColorBrush x:Key="ComboSurfaceBrush" po:Freeze="False" Color="#F7F2FF" />
-        <SolidColorBrush x:Key="ComboTextBrush" po:Freeze="False" Color="#140C20" />
-        <SolidColorBrush x:Key="ComboHighlightBrush" po:Freeze="False" Color="#D8C2FF" />
-        <SolidColorBrush x:Key="SecondaryButtonBrush" po:Freeze="False" Color="#2C1C48" />
-        <SolidColorBrush x:Key="SecondaryButtonBorderBrush" po:Freeze="False" Color="#6942A7" />
-        <SolidColorBrush x:Key="SectionActiveBrush" po:Freeze="False" Color="#7C3AED" />
-        <SolidColorBrush x:Key="RuleCardBrush" po:Freeze="False" Color="#B8241739" />
-        <SolidColorBrush x:Key="RuleCardSelectedBrush" po:Freeze="False" Color="#351C57" />
-        <SolidColorBrush x:Key="RuleCardHoverBrush" po:Freeze="False" Color="#8D56E8" />
-        <SolidColorBrush x:Key="StatusChipBrush" po:Freeze="False" Color="#8E241841" />
-        <SolidColorBrush x:Key="NestedPanelBrush" po:Freeze="False" Color="#B8241739" />
+        <SolidColorBrush x:Key="WindowBackgroundBrush" po:Freeze="False" Color="#1E0B0C" />
+        <SolidColorBrush x:Key="PanelBrush" po:Freeze="False" Color="#CC2B1315" />
+        <SolidColorBrush x:Key="PanelSecondaryBrush" po:Freeze="False" Color="#C839171A" />
+        <SolidColorBrush x:Key="PanelHighlightBrush" po:Freeze="False" Color="#C44E1C1E" />
+        <SolidColorBrush x:Key="BorderBrush" po:Freeze="False" Color="#782B2F" />
+        <SolidColorBrush x:Key="AccentBrush" po:Freeze="False" Color="#F75C55" />
+        <SolidColorBrush x:Key="TextBrush" po:Freeze="False" Color="#FFEEEF" />
+        <SolidColorBrush x:Key="MutedBrush" po:Freeze="False" Color="#D8AFB2" />
+        <SolidColorBrush x:Key="InputBrush" po:Freeze="False" Color="#B83D1A1D" />
+        <SolidColorBrush x:Key="InputBorderBrush" po:Freeze="False" Color="#8E3A40" />
+        <SolidColorBrush x:Key="ComboSurfaceBrush" po:Freeze="False" Color="#FFF2F3" />
+        <SolidColorBrush x:Key="ComboTextBrush" po:Freeze="False" Color="#200C0D" />
+        <SolidColorBrush x:Key="ComboHighlightBrush" po:Freeze="False" Color="#FFC2C8" />
+        <SolidColorBrush x:Key="SecondaryButtonBrush" po:Freeze="False" Color="#481C21" />
+        <SolidColorBrush x:Key="SecondaryButtonBorderBrush" po:Freeze="False" Color="#A7424A" />
+        <SolidColorBrush x:Key="SectionActiveBrush" po:Freeze="False" Color="#ED3A4C" />
+        <SolidColorBrush x:Key="RuleCardBrush" po:Freeze="False" Color="#B839171A" />
+        <SolidColorBrush x:Key="RuleCardSelectedBrush" po:Freeze="False" Color="#571C1F" />
+        <SolidColorBrush x:Key="RuleCardHoverBrush" po:Freeze="False" Color="#E85663" />
+        <SolidColorBrush x:Key="StatusChipBrush" po:Freeze="False" Color="#8E41181F" />
+        <SolidColorBrush x:Key="NestedPanelBrush" po:Freeze="False" Color="#B839171A" />
         <SolidColorBrush x:Key="DangerBrush" po:Freeze="False" Color="#4A1729" />
         <SolidColorBrush x:Key="DangerBorderBrush" po:Freeze="False" Color="#A94A71" />
         <SolidColorBrush x:Key="WarningTextBrush" po:Freeze="False" Color="#FF6B8A" />
         <SolidColorBrush x:Key="AttentionBrush" po:Freeze="False" Color="#46390F" />
         <SolidColorBrush x:Key="AttentionBorderBrush" po:Freeze="False" Color="#D9B84F" />
-        <SolidColorBrush x:Key="HighlightBorderBrush" po:Freeze="False" Color="#774AC7" />
-        <SolidColorBrush x:Key="PopupBorderBrush" po:Freeze="False" Color="#6942A7" />
-        <SolidColorBrush x:Key="ComboDropButtonBrush" po:Freeze="False" Color="#E9DBFF" />
-        <SolidColorBrush x:Key="ComboDropButtonHoverBrush" po:Freeze="False" Color="#D9C2FF" />
-        <SolidColorBrush x:Key="ComboDropButtonPressedBrush" po:Freeze="False" Color="#C7A8FF" />
-        <SolidColorBrush x:Key="ScrollTrackBrush" po:Freeze="False" Color="#25183D" />
-        <SolidColorBrush x:Key="ScrollThumbBrush" po:Freeze="False" Color="#7B57D0" />
-        <SolidColorBrush x:Key="ScrollThumbHoverBrush" po:Freeze="False" Color="#966AF0" />
-        <SolidColorBrush x:Key="ScrollThumbPressedBrush" po:Freeze="False" Color="#B388FF" />
-        <SolidColorBrush x:Key="TitleBarBrush" po:Freeze="False" Color="#221333" />
-        <SolidColorBrush x:Key="TitleBarTextBrush" po:Freeze="False" Color="#F5EEFF" />
-        <SolidColorBrush x:Key="TitleBarSubTextBrush" po:Freeze="False" Color="#CBB9E5" />
+        <SolidColorBrush x:Key="HighlightBorderBrush" po:Freeze="False" Color="#C74A57" />
+        <SolidColorBrush x:Key="PopupBorderBrush" po:Freeze="False" Color="#A7424A" />
+        <SolidColorBrush x:Key="ComboDropButtonBrush" po:Freeze="False" Color="#FFDBDE" />
+        <SolidColorBrush x:Key="ComboDropButtonHoverBrush" po:Freeze="False" Color="#FFC2C7" />
+        <SolidColorBrush x:Key="ComboDropButtonPressedBrush" po:Freeze="False" Color="#FFA8B2" />
+        <SolidColorBrush x:Key="ScrollTrackBrush" po:Freeze="False" Color="#3D181C" />
+        <SolidColorBrush x:Key="ScrollThumbBrush" po:Freeze="False" Color="#D0576B" />
+        <SolidColorBrush x:Key="ScrollThumbHoverBrush" po:Freeze="False" Color="#F06A7D" />
+        <SolidColorBrush x:Key="ScrollThumbPressedBrush" po:Freeze="False" Color="#FF8895" />
+        <SolidColorBrush x:Key="TitleBarBrush" po:Freeze="False" Color="#331313" />
+        <SolidColorBrush x:Key="TitleBarTextBrush" po:Freeze="False" Color="#FFEEEF" />
+        <SolidColorBrush x:Key="TitleBarSubTextBrush" po:Freeze="False" Color="#E5B9BC" />
         <SolidColorBrush x:Key="TitleBarButtonBrush" po:Freeze="False" Color="#00000000" />
-        <SolidColorBrush x:Key="TitleBarButtonHoverBrush" po:Freeze="False" Color="#3B235B" />
-        <SolidColorBrush x:Key="TitleBarButtonPressedBrush" po:Freeze="False" Color="#543183" />
+        <SolidColorBrush x:Key="TitleBarButtonHoverBrush" po:Freeze="False" Color="#5B2325" />
+        <SolidColorBrush x:Key="TitleBarButtonPressedBrush" po:Freeze="False" Color="#833134" />
         <SolidColorBrush x:Key="TitleBarCloseHoverBrush" po:Freeze="False" Color="#B43D62" />
         <SolidColorBrush x:Key="TitleBarClosePressedBrush" po:Freeze="False" Color="#8C2648" />
 
@@ -349,7 +349,7 @@
                             <DropShadowEffect BlurRadius="16"
                                               ShadowDepth="0"
                                               Opacity="0.32"
-                                              Color="#7C56E8"
+                                              Color="#E85674"
                                               RenderingBias="Performance" />
                         </Setter.Value>
                     </Setter>
@@ -3692,7 +3692,7 @@
             <Grid x:Name="LoadingOverlay"
                   Grid.RowSpan="2"
                   Panel.ZIndex="999"
-                  Background="#FF050508">
+                  Background="#FF080506">
     <Grid.Resources>
         <!-- Crystal hologram animation: slow rotation + gentle pulse + glow breathing -->
         <Storyboard x:Key="HologramIdleStoryboard">

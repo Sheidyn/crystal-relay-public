@@ -31,54 +31,54 @@
 
         <FontFamily x:Key="BodyFontFamily">Verdana</FontFamily>
         <FontFamily x:Key="HeadingFontFamily">Constantia</FontFamily>
-        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#130B1E" />
-        <SolidColorBrush x:Key="PanelBrush" Color="#CC1C132B" />
-        <SolidColorBrush x:Key="BorderBrush" Color="#4B2B78" />
-        <SolidColorBrush x:Key="TextBrush" Color="#F5EEFF" />
-        <SolidColorBrush x:Key="MutedBrush" Color="#C9B8E3" />
-        <SolidColorBrush x:Key="MessageTextBrush" Color="#F5EEFF" />
-        <SolidColorBrush x:Key="AccentBrush" Color="#A855F7" />
-        <SolidColorBrush x:Key="InputBrush" Color="#B8271A3D" />
-        <SolidColorBrush x:Key="InputBorderBrush" Color="#5B3A8E" />
-        <SolidColorBrush x:Key="MessageCardBrush" Color="#AA28173C" />
-        <SolidColorBrush x:Key="MessageBorderBrush" Color="#5F3A93" />
-        <SolidColorBrush x:Key="TimestampBrush" Color="#A892CB" />
-        <SolidColorBrush x:Key="SecondaryButtonBrush" Color="#2C1C48" />
-        <SolidColorBrush x:Key="SecondaryButtonBorderBrush" Color="#6942A7" />
-        <SolidColorBrush x:Key="SecondaryButtonTextBrush" Color="#F5EEFF" />
-        <SolidColorBrush x:Key="ComboSurfaceBrush" Color="#F7F2FF" />
-        <SolidColorBrush x:Key="ComboTextBrush" Color="#140C20" />
-        <SolidColorBrush x:Key="ComboHighlightBrush" Color="#D8C2FF" />
-        <SolidColorBrush x:Key="ComboDropButtonBrush" Color="#E9DBFF" />
-        <SolidColorBrush x:Key="ComboDropButtonHoverBrush" Color="#D9C2FF" />
-        <SolidColorBrush x:Key="ComboDropButtonPressedBrush" Color="#C7A8FF" />
-        <SolidColorBrush x:Key="TitleBarBrush" Color="#20122F" />
-        <SolidColorBrush x:Key="TitleBarTextBrush" Color="#F5EEFF" />
-        <SolidColorBrush x:Key="TitleBarSubTextBrush" Color="#CBB9E5" />
+        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#1E0B0C" />
+        <SolidColorBrush x:Key="PanelBrush" Color="#CC2B1315" />
+        <SolidColorBrush x:Key="BorderBrush" Color="#782B2F" />
+        <SolidColorBrush x:Key="TextBrush" Color="#FFEEEF" />
+        <SolidColorBrush x:Key="MutedBrush" Color="#E3B8BB" />
+        <SolidColorBrush x:Key="MessageTextBrush" Color="#FFEEEF" />
+        <SolidColorBrush x:Key="AccentBrush" Color="#F75C55" />
+        <SolidColorBrush x:Key="InputBrush" Color="#B83D1A1D" />
+        <SolidColorBrush x:Key="InputBorderBrush" Color="#8E3A40" />
+        <SolidColorBrush x:Key="MessageCardBrush" Color="#AA3C1717" />
+        <SolidColorBrush x:Key="MessageBorderBrush" Color="#933A3F" />
+        <SolidColorBrush x:Key="TimestampBrush" Color="#CB9297" />
+        <SolidColorBrush x:Key="SecondaryButtonBrush" Color="#481C21" />
+        <SolidColorBrush x:Key="SecondaryButtonBorderBrush" Color="#A7424A" />
+        <SolidColorBrush x:Key="SecondaryButtonTextBrush" Color="#FFEEEF" />
+        <SolidColorBrush x:Key="ComboSurfaceBrush" Color="#FFF2F3" />
+        <SolidColorBrush x:Key="ComboTextBrush" Color="#200C0D" />
+        <SolidColorBrush x:Key="ComboHighlightBrush" Color="#FFC2C8" />
+        <SolidColorBrush x:Key="ComboDropButtonBrush" Color="#FFDBDE" />
+        <SolidColorBrush x:Key="ComboDropButtonHoverBrush" Color="#FFC2C7" />
+        <SolidColorBrush x:Key="ComboDropButtonPressedBrush" Color="#FFA8B2" />
+        <SolidColorBrush x:Key="TitleBarBrush" Color="#2F1212" />
+        <SolidColorBrush x:Key="TitleBarTextBrush" Color="#FFEEEF" />
+        <SolidColorBrush x:Key="TitleBarSubTextBrush" Color="#E5B9BC" />
         <SolidColorBrush x:Key="TitleBarButtonBrush" Color="#00000000" />
-        <SolidColorBrush x:Key="TitleBarButtonHoverBrush" Color="#3B235B" />
-        <SolidColorBrush x:Key="TitleBarButtonPressedBrush" Color="#543183" />
+        <SolidColorBrush x:Key="TitleBarButtonHoverBrush" Color="#5B2325" />
+        <SolidColorBrush x:Key="TitleBarButtonPressedBrush" Color="#833134" />
         <SolidColorBrush x:Key="TitleBarCloseHoverBrush" Color="#B43D62" />
         <SolidColorBrush x:Key="TitleBarClosePressedBrush" Color="#8C2648" />
-        <SolidColorBrush x:Key="RuleCardHoverBrush" Color="#8D56E8" />
-        <SolidColorBrush x:Key="CrystalRelayDevTextBrush" Color="#FFF8FF" />
-        <SolidColorBrush x:Key="CrystalRelayDevMutedBrush" Color="#D8C8FF" />
-        <SolidColorBrush x:Key="CrystalRelayDevInsetBrush" Color="#70130B24" />
-        <SolidColorBrush x:Key="CrystalRelayDevInsetBorderBrush" Color="#80B388FF" />
-        <SolidColorBrush x:Key="CrystalRelayDevBadgeTextBrush" Color="#16071F" />
+        <SolidColorBrush x:Key="RuleCardHoverBrush" Color="#E85663" />
+        <SolidColorBrush x:Key="CrystalRelayDevTextBrush" Color="#FFFCF8" />
+        <SolidColorBrush x:Key="CrystalRelayDevMutedBrush" Color="#FFC8D2" />
+        <SolidColorBrush x:Key="CrystalRelayDevInsetBrush" Color="#70240B0F" />
+        <SolidColorBrush x:Key="CrystalRelayDevInsetBorderBrush" Color="#80FF8895" />
+        <SolidColorBrush x:Key="CrystalRelayDevBadgeTextBrush" Color="#1F0B07" />
         <LinearGradientBrush x:Key="CrystalRelayDevCardBrush"
                              StartPoint="0,0"
                              EndPoint="1,1">
-            <GradientStop Color="#F5090612" Offset="0" />
-            <GradientStop Color="#EA1D0B39" Offset="0.42" />
+            <GradientStop Color="#F5120609" Offset="0" />
+            <GradientStop Color="#EA390B0E" Offset="0.42" />
             <GradientStop Color="#E9082038" Offset="0.72" />
-            <GradientStop Color="#EC2B0B36" Offset="1" />
+            <GradientStop Color="#EC36170B" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="CrystalRelayDevBorderBrush"
                              StartPoint="0,0"
                              EndPoint="1,1">
             <GradientStop Color="#C47DF9FF" Offset="0" />
-            <GradientStop Color="#D8B388FF" Offset="0.34" />
+            <GradientStop Color="#D8FF8895" Offset="0.34" />
             <GradientStop Color="#F0FF78D8" Offset="0.68" />
             <GradientStop Color="#D957F7C7" Offset="1" />
         </LinearGradientBrush>
@@ -86,7 +86,7 @@
                              StartPoint="0,0"
                              EndPoint="0,1">
             <GradientStop Color="#7DF9FF" Offset="0" />
-            <GradientStop Color="#B388FF" Offset="0.48" />
+            <GradientStop Color="#FF8895" Offset="0.48" />
             <GradientStop Color="#FF78D8" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="CrystalRelayDevBadgeBrush"
@@ -94,13 +94,13 @@
                              EndPoint="1,1">
             <GradientStop Color="#F6FAFF" Offset="0" />
             <GradientStop Color="#BFF8FF" Offset="0.46" />
-            <GradientStop Color="#FBB9FF" Offset="1" />
+            <GradientStop Color="#FFDAB9" Offset="1" />
         </LinearGradientBrush>
         <DropShadowEffect x:Key="CrystalRelayDevGlowEffect"
                           BlurRadius="18"
                           ShadowDepth="0"
                           Opacity="0.45"
-                          Color="#B388FF" />
+                          Color="#FF8895" />
         <SolidColorBrush x:Key="KaiBloodwolfTextBrush" Color="#FFF7F7" />
         <SolidColorBrush x:Key="KaiBloodwolfMutedBrush" Color="#F3CED1" />
         <SolidColorBrush x:Key="KaiBloodwolfInsetBrush" Color="#7810080A" />
@@ -108,9 +108,9 @@
         <LinearGradientBrush x:Key="KaiBloodwolfCardBrush"
                              StartPoint="0,0"
                              EndPoint="1,1">
-            <GradientStop Color="#F0060608" Offset="0" />
+            <GradientStop Color="#F0080607" Offset="0" />
             <GradientStop Color="#EC1A070A" Offset="0.46" />
-            <GradientStop Color="#E9070709" Offset="0.74" />
+            <GradientStop Color="#E9090708" Offset="0.74" />
             <GradientStop Color="#ED2A0A10" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="KaiBloodwolfBorderBrush"
@@ -139,82 +139,82 @@
                           ShadowDepth="0"
                           Opacity="0.34"
                           Color="#E52D36" />
-        <SolidColorBrush x:Key="HypercraftiingTextBrush" Color="#FFF4FF" />
-        <SolidColorBrush x:Key="HypercraftiingMutedBrush" Color="#E9CAFF" />
-        <SolidColorBrush x:Key="HypercraftiingInsetBrush" Color="#7A12081C" />
-        <SolidColorBrush x:Key="HypercraftiingInsetBorderBrush" Color="#95C184FF" />
+        <SolidColorBrush x:Key="HypercraftiingTextBrush" Color="#FFFAF4" />
+        <SolidColorBrush x:Key="HypercraftiingMutedBrush" Color="#FFD0CA" />
+        <SolidColorBrush x:Key="HypercraftiingInsetBrush" Color="#7A1C0908" />
+        <SolidColorBrush x:Key="HypercraftiingInsetBorderBrush" Color="#95FF8884" />
         <LinearGradientBrush x:Key="HypercraftiingCardBrush"
                              StartPoint="0,0"
                              EndPoint="1,1">
-            <GradientStop Color="#F0080610" Offset="0" />
-            <GradientStop Color="#EC201039" Offset="0.42" />
-            <GradientStop Color="#E9090710" Offset="0.68" />
+            <GradientStop Color="#F0100609" Offset="0" />
+            <GradientStop Color="#EC391013" Offset="0.42" />
+            <GradientStop Color="#E9100709" Offset="0.68" />
             <GradientStop Color="#EC3B1028" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="HypercraftiingBorderBrush"
                              StartPoint="0,0"
                              EndPoint="1,1">
-            <GradientStop Color="#E6D4A2FF" Offset="0" />
+            <GradientStop Color="#E6FFA9A2" Offset="0" />
             <GradientStop Color="#ECFF667A" Offset="0.52" />
-            <GradientStop Color="#D8844DFF" Offset="1" />
+            <GradientStop Color="#D8FF4D69" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="HypercraftiingRailBrush"
                              StartPoint="0,0"
                              EndPoint="0,1">
-            <GradientStop Color="#D9A5FF" Offset="0" />
+            <GradientStop Color="#FFAFA5" Offset="0" />
             <GradientStop Color="#FF4D68" Offset="0.52" />
-            <GradientStop Color="#6B23B8" Offset="1" />
+            <GradientStop Color="#B82523" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="HypercraftiingBadgeBrush"
                              StartPoint="0,0"
                              EndPoint="1,1">
-            <GradientStop Color="#FAF0FF" Offset="0" />
+            <GradientStop Color="#FFF3F0" Offset="0" />
             <GradientStop Color="#F9A0B0" Offset="0.5" />
-            <GradientStop Color="#C79AFF" Offset="1" />
+            <GradientStop Color="#FF9A9C" Offset="1" />
         </LinearGradientBrush>
         <DropShadowEffect x:Key="HypercraftiingGlowEffect"
                           BlurRadius="15"
                           ShadowDepth="0"
                           Opacity="0.36"
-                          Color="#A15CFF" />
-        <SolidColorBrush x:Key="KyouZakiraTextBrush" Color="#FFF3FF" />
-        <SolidColorBrush x:Key="KyouZakiraMutedBrush" Color="#E6C3FF" />
-        <SolidColorBrush x:Key="KyouZakiraInsetBrush" Color="#78100818" />
-        <SolidColorBrush x:Key="KyouZakiraInsetBorderBrush" Color="#9AD56CFF" />
+                          Color="#FF5C63" />
+        <SolidColorBrush x:Key="KyouZakiraTextBrush" Color="#FFF9F3" />
+        <SolidColorBrush x:Key="KyouZakiraMutedBrush" Color="#FFCAC3" />
+        <SolidColorBrush x:Key="KyouZakiraInsetBrush" Color="#78180908" />
+        <SolidColorBrush x:Key="KyouZakiraInsetBorderBrush" Color="#9AFF906C" />
         <LinearGradientBrush x:Key="KyouZakiraCardBrush"
                              StartPoint="0,0"
                              EndPoint="1,1">
-            <GradientStop Color="#F0060510" Offset="0" />
-            <GradientStop Color="#EC170827" Offset="0.34" />
+            <GradientStop Color="#F0100509" Offset="0" />
+            <GradientStop Color="#EC270908" Offset="0.34" />
             <GradientStop Color="#EA2D0818" Offset="0.68" />
-            <GradientStop Color="#EE100716" Offset="1" />
+            <GradientStop Color="#EE160907" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="KyouZakiraBorderBrush"
                              StartPoint="0,0"
                              EndPoint="1,1">
-            <GradientStop Color="#E8C06BFF" Offset="0" />
+            <GradientStop Color="#E8FF7B6B" Offset="0" />
             <GradientStop Color="#F0FF5E7A" Offset="0.52" />
-            <GradientStop Color="#D88B3BFF" Offset="1" />
+            <GradientStop Color="#D8FF3B46" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="KyouZakiraRailBrush"
                              StartPoint="0,0"
                              EndPoint="0,1">
-            <GradientStop Color="#C56BFF" Offset="0" />
+            <GradientStop Color="#FF806B" Offset="0" />
             <GradientStop Color="#FF466A" Offset="0.54" />
             <GradientStop Color="#260617" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="KyouZakiraBadgeBrush"
                              StartPoint="0,0"
                              EndPoint="1,1">
-            <GradientStop Color="#F8E8FF" Offset="0" />
-            <GradientStop Color="#E16CFF" Offset="0.45" />
+            <GradientStop Color="#FFEDE8" Offset="0" />
+            <GradientStop Color="#FF9C6C" Offset="0.45" />
             <GradientStop Color="#FF6177" Offset="1" />
         </LinearGradientBrush>
         <DropShadowEffect x:Key="KyouZakiraGlowEffect"
                           BlurRadius="15"
                           ShadowDepth="0"
                           Opacity="0.37"
-                          Color="#B64CFF" />
+                          Color="#FF624C" />
         <SolidColorBrush x:Key="Phil13938TextBrush" Color="#FFFFFF" />
         <SolidColorBrush x:Key="Phil13938MutedBrush" Color="#FFE4B5" />
         <SolidColorBrush x:Key="Phil13938InsetBrush" Color="#88440000" />
@@ -291,8 +291,8 @@
                           Opacity="0.34"
                           Color="#00BFA5" />
         <SolidColorBrush x:Key="ChatboxRoleCardTextBrush" Color="#FFFDF7" />
-        <SolidColorBrush x:Key="ChatboxRoleCardMutedBrush" Color="#F0E8FF" />
-        <SolidColorBrush x:Key="ChatboxRoleBadgeTextBrush" Color="#150B18" />
+        <SolidColorBrush x:Key="ChatboxRoleCardMutedBrush" Color="#FFE8EB" />
+        <SolidColorBrush x:Key="ChatboxRoleBadgeTextBrush" Color="#180F0B" />
         <DropShadowEffect x:Key="ChatboxRoleCardGlowEffect"
                           BlurRadius="11"
                           ShadowDepth="0"
@@ -352,9 +352,9 @@
             <GradientStop Color="#8BE8FF" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchVipCardBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#E91D0B22" Offset="0" />
+            <GradientStop Color="#E922120B" Offset="0" />
             <GradientStop Color="#E8421238" Offset="0.58" />
-            <GradientStop Color="#E5201430" Offset="1" />
+            <GradientStop Color="#E5301415" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchVipBorderBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#FFD166" Offset="0" />
@@ -369,9 +369,9 @@
             <GradientStop Color="#FFB3DA" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchArtistCardBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#E91D1832" Offset="0" />
+            <GradientStop Color="#E932181F" Offset="0" />
             <GradientStop Color="#E7073444" Offset="0.58" />
-            <GradientStop Color="#E62A1736" Offset="1" />
+            <GradientStop Color="#E6361C17" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchArtistBorderBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#FF8B6E" Offset="0" />
@@ -392,37 +392,37 @@
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchTierOneBorderBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#8FB7FF" Offset="0" />
-            <GradientStop Color="#B89CFF" Offset="1" />
+            <GradientStop Color="#FF9CAE" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchTierOneRailBrush" StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#8FB7FF" Offset="0" />
-            <GradientStop Color="#B89CFF" Offset="1" />
+            <GradientStop Color="#FF9CAE" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchTierOneBadgeBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#D8E5FF" Offset="0" />
-            <GradientStop Color="#D9CBFF" Offset="1" />
+            <GradientStop Color="#FFCBD5" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchTierTwoCardBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#E91C1034" Offset="0" />
-            <GradientStop Color="#E93A1554" Offset="0.58" />
+            <GradientStop Color="#E9341015" Offset="0" />
+            <GradientStop Color="#E9541D15" Offset="0.58" />
             <GradientStop Color="#E718274C" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchTierTwoBorderBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#FF9AC7" Offset="0" />
-            <GradientStop Color="#C6A0FF" Offset="1" />
+            <GradientStop Color="#FFA0A6" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchTierTwoRailBrush" StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#FF9AC7" Offset="0" />
-            <GradientStop Color="#C6A0FF" Offset="1" />
+            <GradientStop Color="#FFA0A6" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchTierTwoBadgeBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#FFD3E7" Offset="0" />
-            <GradientStop Color="#E3D1FF" Offset="1" />
+            <GradientStop Color="#FFD1D4" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchTierThreeCardBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#EA26140F" Offset="0" />
             <GradientStop Color="#E8492326" Offset="0.48" />
-            <GradientStop Color="#E916163B" Offset="1" />
+            <GradientStop Color="#E93B1627" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchTierThreeBorderBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#FFE9A6" Offset="0" />
@@ -440,19 +440,19 @@
         <LinearGradientBrush x:Key="TwitchSubscriberCardBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#E80B1D32" Offset="0" />
             <GradientStop Color="#E7133248" Offset="0.6" />
-            <GradientStop Color="#E61E1842" Offset="1" />
+            <GradientStop Color="#E6421826" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchSubscriberBorderBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#74F1D2" Offset="0" />
-            <GradientStop Color="#B99AFF" Offset="1" />
+            <GradientStop Color="#FF9AAA" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchSubscriberRailBrush" StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#74F1D2" Offset="0" />
-            <GradientStop Color="#B99AFF" Offset="1" />
+            <GradientStop Color="#FF9AAA" Offset="1" />
         </LinearGradientBrush>
         <LinearGradientBrush x:Key="TwitchSubscriberBadgeBrush" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#C8F8EC" Offset="0" />
-            <GradientStop Color="#D9CCFF" Offset="1" />
+            <GradientStop Color="#FFCCD7" Offset="1" />
         </LinearGradientBrush>
 
         <Style TargetType="TextBlock">
@@ -1392,7 +1392,7 @@
             <Setter Property="BorderBrush" Value="{DynamicResource MessageBorderBrush}" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding HasBadgeRoleCard}" Value="True">
-                    <Setter Property="Background" Value="#55130B24" />
+                    <Setter Property="Background" Value="#55240B0F" />
                     <Setter Property="BorderBrush" Value="{StaticResource ChatboxRoleCardMutedBrush}" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding IsKaiBloodwolfRoleCard}" Value="True">
@@ -1427,7 +1427,7 @@
             <Setter Property="BorderBrush" Value="{DynamicResource MessageBorderBrush}" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding HasBadgeRoleCard}" Value="True">
-                    <Setter Property="Background" Value="#55130B24" />
+                    <Setter Property="Background" Value="#55240B0F" />
                     <Setter Property="BorderBrush" Value="{StaticResource ChatboxRoleCardMutedBrush}" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding IsKaiBloodwolfRoleCard}" Value="True">

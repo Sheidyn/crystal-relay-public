@@ -506,21 +506,21 @@ public partial class ThemedDialogWindow : Window
 
         Resources["BodyFontFamily"] = new FontFamily("Verdana");
         Resources["HeadingFontFamily"] = new FontFamily("Constantia");
-        SetBrushColor("WindowBackgroundBrush", "#130B1E");
-        SetBrushColor("PanelBrush", "#CC1C132B");
-        SetBrushColor("BorderBrush", "#4B2B78");
-        SetBrushColor("AccentBrush", "#A855F7");
-        SetBrushColor("TextBrush", "#F5EEFF");
-        SetBrushColor("MutedBrush", "#C9B8E3");
-        SetBrushColor("StatusChipBrush", "#8E241841");
-        SetBrushColor("SecondaryButtonBrush", "#2C1C48");
-        SetBrushColor("SecondaryButtonBorderBrush", "#6942A7");
-        SetBrushColor("TitleBarBrush", "#20122F");
-        SetBrushColor("TitleBarTextBrush", "#F5EEFF");
-        SetBrushColor("TitleBarSubTextBrush", "#CBB9E5");
+        SetBrushColor("WindowBackgroundBrush", "#1E0B0C");
+        SetBrushColor("PanelBrush", "#CC2B1315");
+        SetBrushColor("BorderBrush", "#782B2F");
+        SetBrushColor("AccentBrush", "#F75C55");
+        SetBrushColor("TextBrush", "#FFEEEF");
+        SetBrushColor("MutedBrush", "#E3B8BB");
+        SetBrushColor("StatusChipBrush", "#8E41181F");
+        SetBrushColor("SecondaryButtonBrush", "#481C21");
+        SetBrushColor("SecondaryButtonBorderBrush", "#A7424A");
+        SetBrushColor("TitleBarBrush", "#2F1212");
+        SetBrushColor("TitleBarTextBrush", "#FFEEEF");
+        SetBrushColor("TitleBarSubTextBrush", "#E5B9BC");
         SetBrushColor("TitleBarButtonBrush", "#00000000");
-        SetBrushColor("TitleBarButtonHoverBrush", "#3B235B");
-        SetBrushColor("TitleBarButtonPressedBrush", "#543183");
+        SetBrushColor("TitleBarButtonHoverBrush", "#5B2325");
+        SetBrushColor("TitleBarButtonPressedBrush", "#833134");
         SetBrushColor("TitleBarCloseHoverBrush", "#B43D62");
         SetBrushColor("TitleBarClosePressedBrush", "#8C2648");
     }

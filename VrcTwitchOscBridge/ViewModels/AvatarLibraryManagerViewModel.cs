@@ -172,7 +172,7 @@ public sealed class AvatarLibraryManagerViewModel : ObservableObject
         var tag = new AvatarTag
         {
             Name = $"Tag {Tags.Count + 1}",
-            ColorHex = "#A855F7"
+            ColorHex = "#F75C55"
         };
         Tags.Add(tag);
         SelectedTag = tag;

@@ -20,18 +20,18 @@
     <Window.Resources>
         <FontFamily x:Key="BodyFontFamily">Verdana</FontFamily>
         <FontFamily x:Key="HeadingFontFamily">Constantia</FontFamily>
-        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#130B1E" />
-        <SolidColorBrush x:Key="PanelBrush" Color="#CC1C132B" />
-        <SolidColorBrush x:Key="BorderBrush" Color="#4B2B78" />
-        <SolidColorBrush x:Key="AccentBrush" Color="#A855F7" />
-        <SolidColorBrush x:Key="TextBrush" Color="#F5EEFF" />
-        <SolidColorBrush x:Key="MutedBrush" Color="#C9B8E3" />
-        <SolidColorBrush x:Key="InputBrush" Color="#B8271A3D" />
-        <SolidColorBrush x:Key="InputBorderBrush" Color="#5B3A8E" />
-        <SolidColorBrush x:Key="TitleBarBrush" Color="#20122F" />
-        <SolidColorBrush x:Key="TitleBarTextBrush" Color="#F5EEFF" />
-        <SolidColorBrush x:Key="SecondaryButtonBrush" Color="#2C1C48" />
-        <SolidColorBrush x:Key="SecondaryButtonBorderBrush" Color="#6942A7" />
+        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#1E0B0C" />
+        <SolidColorBrush x:Key="PanelBrush" Color="#CC2B1315" />
+        <SolidColorBrush x:Key="BorderBrush" Color="#782B2F" />
+        <SolidColorBrush x:Key="AccentBrush" Color="#F75C55" />
+        <SolidColorBrush x:Key="TextBrush" Color="#FFEEEF" />
+        <SolidColorBrush x:Key="MutedBrush" Color="#E3B8BB" />
+        <SolidColorBrush x:Key="InputBrush" Color="#B83D1A1D" />
+        <SolidColorBrush x:Key="InputBorderBrush" Color="#8E3A40" />
+        <SolidColorBrush x:Key="TitleBarBrush" Color="#2F1212" />
+        <SolidColorBrush x:Key="TitleBarTextBrush" Color="#FFEEEF" />
+        <SolidColorBrush x:Key="SecondaryButtonBrush" Color="#481C21" />
+        <SolidColorBrush x:Key="SecondaryButtonBorderBrush" Color="#A7424A" />
 
         <Style x:Key="PrimaryButtonStyle" TargetType="Button">
             <Setter Property="FontFamily" Value="{DynamicResource HeadingFontFamily}" />
@@ -106,7 +106,7 @@
                     <TextBox x:Name="ColorBox" Style="{StaticResource InputTextBoxStyle}" Width="100" MaxLength="7" />
                     <Border x:Name="ColorPreview" Width="24" Height="24" CornerRadius="4" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" Margin="8,0,0,0">
                         <Border.Background>
-                            <SolidColorBrush Color="{Binding Text, ElementName=ColorBox, TargetNullValue=#A855F7, FallbackValue=#A855F7}" />
+                            <SolidColorBrush Color="{Binding Text, ElementName=ColorBox, TargetNullValue=#F75C55, FallbackValue=#F75C55}" />
                         </Border.Background>
                     </Border>
                 </StackPanel>

@@ -141,7 +141,7 @@ public sealed class AvatarTag : ObservableObject
 {
     private string id = Guid.NewGuid().ToString();
     private string name = string.Empty;
-    private string colorHex = "#A855F7";
+    private string colorHex = "#F75C55";
 
     public string Id
     {

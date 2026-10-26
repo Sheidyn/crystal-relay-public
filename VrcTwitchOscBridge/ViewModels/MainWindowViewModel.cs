@@ -22008,7 +22008,7 @@ public sealed class TwitchChatMessageEntry : ObservableObject
     private const string KyouZakiraLogin = "kyou_zakira";
     private const string Phil13938Login = "phil13938";
     private const string FalxPlaysLogin = "falxplays";
-    private static readonly SolidColorBrush DefaultNameBrush = CreateFrozenBrush("#F5EEFF");
+    private static readonly SolidColorBrush DefaultNameBrush = CreateFrozenBrush("#FFEEEF");
     private static readonly SolidColorBrush BubblegumNameBrush = CreateFrozenBrush("#5A426B");
     private static readonly LinearGradientBrush CrystalRelayDeveloperNameBrush = CreateFrozenDeveloperNameBrush();
     private static readonly LinearGradientBrush KaiBloodwolfNameBrush = CreateFrozenKaiBloodwolfNameBrush();

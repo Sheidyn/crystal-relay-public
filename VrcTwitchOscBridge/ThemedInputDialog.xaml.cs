@@ -29,7 +29,7 @@ public partial class ThemedInputDialog : Window
         ColorPanel.Visibility = showColor ? Visibility.Visible : Visibility.Collapsed;
         if (showColor)
         {
-            ColorBox.Text = "#A855F7";
+            ColorBox.Text = "#F75C55";
         }
 
         Loaded += (s, e) => InputBox.Focus();

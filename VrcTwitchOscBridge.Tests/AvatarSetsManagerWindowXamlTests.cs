@@ -77,8 +77,8 @@ public sealed class AvatarSetsManagerWindowXamlTests
         var xaml = File.ReadAllText(FindSourceFile("VrcTwitchOscBridge", "AvatarSetsManagerWindow.xaml"));
         var implicitStyleIndex = xaml.IndexOf("<Style TargetType=\"ComboBox\">", StringComparison.Ordinal);
         var styleIndex = xaml.IndexOf("x:Key=\"ComboBoxStyle\"", StringComparison.Ordinal);
-        Assert.Contains("<SolidColorBrush x:Key=\"ComboTextBrush\" Color=\"#140C20\"", xaml, StringComparison.Ordinal);
-        Assert.Contains("<SolidColorBrush x:Key=\"ComboSurfaceBrush\" Color=\"#F7F2FF\"", xaml, StringComparison.Ordinal);
+        Assert.Contains("<SolidColorBrush x:Key=\"ComboTextBrush\" Color=\"#200C0D\"", xaml, StringComparison.Ordinal);
+        Assert.Contains("<SolidColorBrush x:Key=\"ComboSurfaceBrush\" Color=\"#FFF2F3\"", xaml, StringComparison.Ordinal);
         Assert.True(implicitStyleIndex >= 0, "The implicit themed ComboBox style should be defined.");
         Assert.True(styleIndex >= 0, "ComboBoxStyle should be defined as a resource.");
         Assert.True(styleIndex > implicitStyleIndex, "ComboBoxStyle should be defined after the implicit ComboBox style so BasedOn can inherit the themed template.");

@@ -415,7 +415,7 @@ public partial class AvatarPickerWindow : Window
         var tag = new AvatarTag
         {
             Name = name.Trim(),
-            ColorHex = string.IsNullOrWhiteSpace(color) ? "#A855F7" : color
+            ColorHex = string.IsNullOrWhiteSpace(color) ? "#F75C55" : color
         };
         library.Tags.Add(tag);
 

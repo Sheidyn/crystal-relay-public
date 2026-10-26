@@ -309,20 +309,20 @@ public partial class VrChatTwoFactorWindow : Window
 
         Resources["BodyFontFamily"] = new FontFamily("Verdana");
         Resources["HeadingFontFamily"] = new FontFamily("Constantia");
-        SetBrushColor("WindowBackgroundBrush", "#130B1E");
-        SetBrushColor("PanelBrush", "#CC1C132B");
-        SetBrushColor("BorderBrush", "#4B2B78");
-        SetBrushColor("AccentBrush", "#A855F7");
-        SetBrushColor("TextBrush", "#F5EEFF");
-        SetBrushColor("MutedBrush", "#C9B8E3");
-        SetBrushColor("InputBrush", "#B8271A3D");
-        SetBrushColor("InputBorderBrush", "#5B3A8E");
-        SetBrushColor("ComboSurfaceBrush", "#F7F2FF");
-        SetBrushColor("ComboTextBrush", "#140C20");
-        SetBrushColor("ComboHighlightBrush", "#D8C2FF");
-        SetBrushColor("StatusChipBrush", "#8E241841");
-        SetBrushColor("SecondaryButtonBrush", "#2C1C48");
-        SetBrushColor("SecondaryButtonBorderBrush", "#6942A7");
+        SetBrushColor("WindowBackgroundBrush", "#1E0B0C");
+        SetBrushColor("PanelBrush", "#CC2B1315");
+        SetBrushColor("BorderBrush", "#782B2F");
+        SetBrushColor("AccentBrush", "#F75C55");
+        SetBrushColor("TextBrush", "#FFEEEF");
+        SetBrushColor("MutedBrush", "#E3B8BB");
+        SetBrushColor("InputBrush", "#B83D1A1D");
+        SetBrushColor("InputBorderBrush", "#8E3A40");
+        SetBrushColor("ComboSurfaceBrush", "#FFF2F3");
+        SetBrushColor("ComboTextBrush", "#200C0D");
+        SetBrushColor("ComboHighlightBrush", "#FFC2C8");
+        SetBrushColor("StatusChipBrush", "#8E41181F");
+        SetBrushColor("SecondaryButtonBrush", "#481C21");
+        SetBrushColor("SecondaryButtonBorderBrush", "#A7424A");
     }
 
     private void SetBrushColor(string resourceKey, string colorText)

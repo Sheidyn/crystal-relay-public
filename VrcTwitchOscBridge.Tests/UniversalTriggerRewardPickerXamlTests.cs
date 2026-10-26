@@ -306,27 +306,27 @@ public sealed class UniversalTriggerRewardPickerXamlTests
             source,
             StringComparison.Ordinal);
         Assert.Contains(
-            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboSurfaceBrush\", \"#2F1A4A\")",
+            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboSurfaceBrush\", \"#4A1A1B\")",
             source,
             StringComparison.Ordinal);
         Assert.Contains(
-            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboTextBrush\", \"#F8F1FF\")",
+            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboTextBrush\", \"#FFF1F1\")",
             source,
             StringComparison.Ordinal);
         Assert.Contains(
-            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboHighlightBrush\", \"#5A2E8A\")",
+            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboHighlightBrush\", \"#8A2F2E\")",
             source,
             StringComparison.Ordinal);
         Assert.Contains(
-            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboDropButtonBrush\", \"#3A2160\")",
+            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboDropButtonBrush\", \"#602125\")",
             source,
             StringComparison.Ordinal);
         Assert.Contains(
-            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboDropButtonHoverBrush\", \"#6F3FB0\")",
+            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboDropButtonHoverBrush\", \"#B03F44\")",
             source,
             StringComparison.Ordinal);
         Assert.Contains(
-            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboDropButtonPressedBrush\", \"#824DCF\")",
+            "SetUniversalTriggerBrushColor(\"UniversalTriggerComboDropButtonPressedBrush\", \"#CF4D55\")",
             source,
             StringComparison.Ordinal);
         Assert.Contains(

@@ -606,7 +606,7 @@ public sealed class AvatarPickerViewModel : ObservableObject
             {
                 var count = AllAvatars.Count(a => avatarLibrary.GetEntry(a.Id)?.GroupId == group.Id);
                 items.Add(new SidebarItem(group.Name, BrowseSection.UserGroup,
-                    "", count, ColorHex: "#A855F7"));
+                    "", count, ColorHex: "#F75C55"));
             }
         }
 

@@ -108,12 +108,12 @@ public partial class UniversalTriggersManagerWindow : Window
             return;
         }
 
-        SetUniversalTriggerBrushColor("UniversalTriggerComboSurfaceBrush", "#2F1A4A");
-        SetUniversalTriggerBrushColor("UniversalTriggerComboTextBrush", "#F8F1FF");
-        SetUniversalTriggerBrushColor("UniversalTriggerComboHighlightBrush", "#5A2E8A");
-        SetUniversalTriggerBrushColor("UniversalTriggerComboDropButtonBrush", "#3A2160");
-        SetUniversalTriggerBrushColor("UniversalTriggerComboDropButtonHoverBrush", "#6F3FB0");
-        SetUniversalTriggerBrushColor("UniversalTriggerComboDropButtonPressedBrush", "#824DCF");
+        SetUniversalTriggerBrushColor("UniversalTriggerComboSurfaceBrush", "#4A1A1B");
+        SetUniversalTriggerBrushColor("UniversalTriggerComboTextBrush", "#FFF1F1");
+        SetUniversalTriggerBrushColor("UniversalTriggerComboHighlightBrush", "#8A2F2E");
+        SetUniversalTriggerBrushColor("UniversalTriggerComboDropButtonBrush", "#602125");
+        SetUniversalTriggerBrushColor("UniversalTriggerComboDropButtonHoverBrush", "#B03F44");
+        SetUniversalTriggerBrushColor("UniversalTriggerComboDropButtonPressedBrush", "#CF4D55");
     }
 
     private void CopyUniversalTriggerBrushColor(string sourceKey, string targetKey)

@@ -21,27 +21,27 @@
     <Window.Resources>
         <FontFamily x:Key="BodyFontFamily">Verdana</FontFamily>
         <FontFamily x:Key="HeadingFontFamily">Constantia</FontFamily>
-        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#130B1E" />
-        <SolidColorBrush x:Key="PanelBrush" Color="#CC1C132B" />
-        <SolidColorBrush x:Key="BorderBrush" Color="#4B2B78" />
-        <SolidColorBrush x:Key="AccentBrush" Color="#A855F7" />
-        <SolidColorBrush x:Key="TextBrush" Color="#F5EEFF" />
-        <SolidColorBrush x:Key="MutedBrush" Color="#C9B8E3" />
-        <SolidColorBrush x:Key="InputBrush" Color="#B8271A3D" />
-        <SolidColorBrush x:Key="InputBorderBrush" Color="#5B3A8E" />
-        <SolidColorBrush x:Key="TitleBarBrush" Color="#20122F" />
-        <SolidColorBrush x:Key="TitleBarTextBrush" Color="#F5EEFF" />
+        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#1E0B0C" />
+        <SolidColorBrush x:Key="PanelBrush" Color="#CC2B1315" />
+        <SolidColorBrush x:Key="BorderBrush" Color="#782B2F" />
+        <SolidColorBrush x:Key="AccentBrush" Color="#F75C55" />
+        <SolidColorBrush x:Key="TextBrush" Color="#FFEEEF" />
+        <SolidColorBrush x:Key="MutedBrush" Color="#E3B8BB" />
+        <SolidColorBrush x:Key="InputBrush" Color="#B83D1A1D" />
+        <SolidColorBrush x:Key="InputBorderBrush" Color="#8E3A40" />
+        <SolidColorBrush x:Key="TitleBarBrush" Color="#2F1212" />
+        <SolidColorBrush x:Key="TitleBarTextBrush" Color="#FFEEEF" />
         <SolidColorBrush x:Key="TitleBarCloseHoverBrush" Color="#B43D62" />
         <SolidColorBrush x:Key="TitleBarClosePressedBrush" Color="#8C2648" />
-        <SolidColorBrush x:Key="SecondaryButtonBrush" Color="#2C1C48" />
-        <SolidColorBrush x:Key="SecondaryButtonBorderBrush" Color="#6942A7" />
-        <SolidColorBrush x:Key="CardBackgroundBrush" Color="#1A142A" />
-        <SolidColorBrush x:Key="CardHoverBrush" Color="#2A1E3A" />
-        <SolidColorBrush x:Key="CardSelectedBrush" Color="#3A2A5A" />
-        <SolidColorBrush x:Key="ImagePlaceholderBrush" Color="#3D2A5E" />
-        <SolidColorBrush x:Key="ScrollTrackBrush" Color="#25183D" />
-        <SolidColorBrush x:Key="ScrollThumbBrush" Color="#7B57D0" />
-        <SolidColorBrush x:Key="RuleCardHoverBrush" Color="#8D56E8" />
+        <SolidColorBrush x:Key="SecondaryButtonBrush" Color="#481C21" />
+        <SolidColorBrush x:Key="SecondaryButtonBorderBrush" Color="#A7424A" />
+        <SolidColorBrush x:Key="CardBackgroundBrush" Color="#2A1418" />
+        <SolidColorBrush x:Key="CardHoverBrush" Color="#3A1E1F" />
+        <SolidColorBrush x:Key="CardSelectedBrush" Color="#5A2A30" />
+        <SolidColorBrush x:Key="ImagePlaceholderBrush" Color="#5E2A2F" />
+        <SolidColorBrush x:Key="ScrollTrackBrush" Color="#3D181C" />
+        <SolidColorBrush x:Key="ScrollThumbBrush" Color="#D0576B" />
+        <SolidColorBrush x:Key="RuleCardHoverBrush" Color="#E85663" />
 
         <Style x:Key="TitleBarCloseButtonStyle" TargetType="Button">
             <Setter Property="Width" Value="46" />
@@ -358,7 +358,7 @@
                                                 <TextBox Grid.Column="1" Text="{Binding ColorHex, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ThemedTextBoxStyle}" TextAlignment="Center" Width="80" Margin="0,0,8,0" />
                                                 <Border Grid.Column="2" Width="24" Height="24" CornerRadius="6" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1">
                                                     <Border.Background>
-                                                        <SolidColorBrush Color="{Binding ColorHex, TargetNullValue=#A855F7, FallbackValue=#A855F7}" />
+                                                        <SolidColorBrush Color="{Binding ColorHex, TargetNullValue=#F75C55, FallbackValue=#F75C55}" />
                                                     </Border.Background>
                                                 </Border>
                                             </Grid>
