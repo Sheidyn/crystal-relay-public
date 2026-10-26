@@ -427,7 +427,6 @@ public sealed class SettingsStore
             settings.EmergencyRedeemStopEnabled = profile.EmergencyRedeemStopEnabled ?? settings.EmergencyRedeemStopEnabled;
             settings.DesktopModeInputLockEnabled = profile.DesktopModeInputLockEnabled ?? settings.DesktopModeInputLockEnabled;
             settings.RestartVrChatInDesktopMode = profile.RestartVrChatInDesktopMode ?? settings.RestartVrChatInDesktopMode;
-            settings.LiveFeedbackHeartbeatEnabled = true;
             settings.BetaApplicationUpdatesEnabled = profile.BetaApplicationUpdatesEnabled ?? settings.BetaApplicationUpdatesEnabled;
             settings.EasterEggsEnabled = profile.EasterEggsEnabled ?? settings.EasterEggsEnabled;
             settings.MainWindowTrayTipShown = profile.MainWindowTrayTipShown ?? settings.MainWindowTrayTipShown;
@@ -621,7 +620,6 @@ public sealed class SettingsStore
             EmergencyRedeemStopEnabled = settings.EmergencyRedeemStopEnabled,
             DesktopModeInputLockEnabled = settings.DesktopModeInputLockEnabled,
             RestartVrChatInDesktopMode = settings.RestartVrChatInDesktopMode,
-            LiveFeedbackHeartbeatEnabled = settings.LiveFeedbackHeartbeatEnabled,
             BetaApplicationUpdatesEnabled = settings.BetaApplicationUpdatesEnabled,
             EasterEggsEnabled = settings.EasterEggsEnabled,
             MainWindowTrayTipShown = settings.MainWindowTrayTipShown,
@@ -2911,9 +2909,6 @@ ChannelPointRules = [.. profile.ChannelPointRules.Select(ToPersistedRule)],
         public bool? DesktopModeInputLockEnabled { get; set; }
 
         public bool? RestartVrChatInDesktopMode { get; set; }
-
-        [JsonPropertyName("liveFeedbackHeartbeatEnabled")]
-        public bool? LiveFeedbackHeartbeatEnabled { get; set; }
 
         public bool? BetaApplicationUpdatesEnabled { get; set; }
 

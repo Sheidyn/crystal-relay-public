@@ -81,7 +81,6 @@ public sealed class AppSettings : ObservableObject
     private bool emergencyRedeemStopEnabled;
     private bool desktopModeInputLockEnabled;
     private bool restartVrChatInDesktopMode;
-    private bool liveFeedbackHeartbeatEnabled = true;
     private bool betaApplicationUpdatesEnabled;
     private bool easterEggsEnabled = true;
     private bool mainWindowTrayTipShown;
@@ -563,18 +562,6 @@ public sealed class AppSettings : ObservableObject
     {
         get => restartVrChatInDesktopMode;
         set => SetProperty(ref restartVrChatInDesktopMode, value);
-    }
-
-    public bool LiveFeedbackHeartbeatEnabled
-    {
-        get => true;
-        set
-        {
-            if (value)
-            {
-                SetProperty(ref liveFeedbackHeartbeatEnabled, true);
-            }
-        }
     }
 
     public bool BetaApplicationUpdatesEnabled

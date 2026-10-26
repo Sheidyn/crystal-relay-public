@@ -260,7 +260,6 @@
     <Compile Include="Services\FloatValueModeConverter.cs" />
     <Compile Include="Services\LoadingPhaseService.cs" />
     <Compile Include="Services\LocalizationService.cs" />
-    <Compile Include="Services\LiveFeedbackHeartbeatService.cs" />
     <Compile Include="Services\ManagedRewardPresentation.cs" />
     <Compile Include="Services\OscAvatarChangeMerger.cs" />
     <Compile Include="Services\OscRouterService.cs" />

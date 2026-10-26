@@ -2091,22 +2091,6 @@
                                     <Border Margin="0,14,0,0" Background="{DynamicResource NestedPanelBrush}" BorderBrush="{DynamicResource InputBorderBrush}" BorderThickness="1" CornerRadius="18" Padding="16"
                                             Visibility="{Binding IsSettingsAppSectionSelected, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <StackPanel>
-                                            <TextBlock Text="{loc:Translate 'Live Feedback Heartbeat'}"
-                                                       Style="{StaticResource HeadingTextStyle}"
-                                                       FontSize="17"
-                                                       FontWeight="SemiBold"
-                                                       Foreground="{DynamicResource TextBrush}"
-                                                       TextWrapping="Wrap" />
-                                            <TextBlock Margin="0,8,0,0"
-                                                        Text="{loc:Translate 'Crystal Relay includes a Live Feedback Heartbeat. This helps the developer find live Crystal Relay streams for feedback, support, and community interaction. This does not send Twitch tokens, VRChat credentials, OSC data, chat messages, or private VRChat information.'}"
-                                                        Foreground="{DynamicResource MutedBrush}"
-                                                        TextWrapping="Wrap" />
-                                        </StackPanel>
-                                    </Border>
-
-                                    <Border Margin="0,14,0,0" Background="{DynamicResource NestedPanelBrush}" BorderBrush="{DynamicResource InputBorderBrush}" BorderThickness="1" CornerRadius="18" Padding="16"
-                                            Visibility="{Binding IsSettingsAppSectionSelected, Converter={StaticResource BoolToVisibilityConverter}}">
-                                        <StackPanel>
                                             <TextBlock Text="{loc:Translate 'Update Preferences'}"
                                                        Style="{StaticResource HeadingTextStyle}"
                                                        FontSize="17"

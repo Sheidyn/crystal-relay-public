@@ -417,7 +417,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
     private readonly ApplicationUpdateService applicationUpdateService = new();
     internal Action? UpdateCheckRequested;
     private readonly BugReportService bugReportService = new();
-    private readonly LiveFeedbackHeartbeatService liveFeedbackHeartbeatService = new();
     private readonly WorldCommandBlacklistService worldCommandBlacklistService = new();
     private readonly VrChatApiClient vrChatApiClient = new();
     internal VrChatApiClient VrChatApiClient => vrChatApiClient;
@@ -1040,7 +1039,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         bridgeCoordinator.GroupToggleRequested += groupName => RunOnUi(() => ToggleRedeemGroupByName(groupName));
         bridgeCoordinator.RedeemControlRequested += (redeemName, enable) => RunOnUi(() => ToggleRedeemByName(redeemName, enable));
         bridgeCoordinator.VrChatOscAvatarChangeReceived += avatarId => RunOnUi(() => HandleIncomingOscAvatarChangeSync(avatarId));
-        liveFeedbackHeartbeatService.DiagnosticLogged += message => RunOnUi(() => AppendLog(message));
 
         LoadingService.DefinePhases(
             ("settings", "Loading Settings"),
@@ -3166,7 +3164,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         LoadingService.ReportProgress("bridge", PhaseStatus.Completed);
         LoadingService.ReportProgress("finalizing", PhaseStatus.Active);
         QueueBridgeRefresh();
-        QueueLiveFeedbackHeartbeatEvaluation();
         LoadingService.CompleteAll();
     }
 
@@ -3187,15 +3184,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
             testModeWindow.Closed -= OnTestModeWindowClosed;
             testModeWindow.Close();
             testModeWindow = null;
-        }
-
-        try
-        {
-            await StopLiveFeedbackHeartbeatAsync();
-        }
-        catch
-        {
-            // Shutdown should not wait on or fail because of live-feedback cleanup.
         }
 
         saveDebounceCancellation?.Cancel();
@@ -3264,8 +3252,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         _xsOverlayNotificationService.Dispose();
         twitchApiClient.Dispose();
         applicationUpdateService.Dispose();
-        bugReportService.Dispose();
-        liveFeedbackHeartbeatService.Dispose();
         worldCommandBlacklistService.Dispose();
         vrChatApiClient.Dispose();
         sessionStatusTimer.Stop();
@@ -3831,7 +3817,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
     // so a later reconnect gets a fresh reward-management check.
     private async Task DisconnectBroadcasterAsync()
     {
-        await StopLiveFeedbackHeartbeatAsync();
         ClearBroadcasterManagedRewardsUnavailableForSession();
         broadcasterReconnectRequired = false;
         Settings.Broadcaster.Clear();
@@ -9372,11 +9357,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
             ClearBroadcasterManagedRewardsUnavailableForSession();
         }
 
-        if (ReferenceEquals(sender, Settings.Broadcaster))
-        {
-            QueueLiveFeedbackHeartbeatEvaluation();
-        }
-
         if (sender is AppSettings
             && e.PropertyName is nameof(AppSettings.Theme) or nameof(AppSettings.CustomTheme))
         {
@@ -9446,13 +9426,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         }
 
         if (sender is AppSettings
-            && e.PropertyName == nameof(AppSettings.LiveFeedbackHeartbeatEnabled))
-        {
-            saveDelayMilliseconds = 0;
-            QueueLiveFeedbackHeartbeatEvaluation();
-        }
-
-        if (sender is AppSettings
             && e.PropertyName == nameof(AppSettings.BetaApplicationUpdatesEnabled))
         {
             saveDelayMilliseconds = 0;
@@ -9488,7 +9461,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
                 or nameof(AppSettings.ChatboxSettingsPanelOpen)
                 or nameof(AppSettings.ChatboxOverlayMode)
                 or nameof(AppSettings.ChatboxViewerSoundEnabled)
-                or nameof(AppSettings.LiveFeedbackHeartbeatEnabled)
                 or nameof(AppSettings.BetaApplicationUpdatesEnabled)
                 or nameof(AppSettings.EasterEggsEnabled)
                 or nameof(AppSettings.Language)
@@ -9866,7 +9838,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
             if (ex.AccountRole == BridgeAccountRole.Broadcaster)
             {
                 broadcasterReconnectRequired = true;
-                QueueLiveFeedbackHeartbeatEvaluation();
             }
             else
             {
@@ -10408,7 +10379,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         {
             broadcasterReconnectRequired = true;
             UpdateAccountStatuses();
-            QueueLiveFeedbackHeartbeatEvaluation();
             RecordSavedLoginRecoverySignal();
             SetUniversalManagedRewardSyncStatus(status);
             RunOnUi(() => AppendThrottledLog(
@@ -10637,7 +10607,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
 
         broadcasterReconnectRequired = false;
         UpdateAccountStatuses();
-        QueueLiveFeedbackHeartbeatEvaluation();
         QueueSave(0);
         if (bridgeSensitiveChange)
         {
@@ -10693,7 +10662,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
 
         Settings.Broadcaster.Apply(refreshedAccount);
         broadcasterReconnectRequired = false;
-        QueueLiveFeedbackHeartbeatEvaluation();
         if (BroadcasterCanManageRewards)
         {
             ClearBroadcasterManagedRewardsUnavailableForSession();
@@ -16305,7 +16273,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         runtimeConfigLoaded = true;
         RunOnUi(RefreshRuntimeSummary);
         RunOnUi(RefreshCommandStates);
-        RunOnUi(QueueLiveFeedbackHeartbeatEvaluation);
     }
 
     private void UpdateAccountStatuses()
@@ -17231,8 +17198,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
             {
                 ClearBroadcasterManagedRewardsUnavailableForSession();
             }
-
-            QueueLiveFeedbackHeartbeatEvaluation();
         }
         else
         {
@@ -18064,7 +18029,6 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         hasResolvedBroadcasterLiveState = true;
         IsBroadcasterLive = isLive;
         RefreshStreamingStatusCard();
-        QueueLiveFeedbackHeartbeatEvaluation();
 
         if (isLive && Settings.ChannelPointRewardTestModeEnabled)
         {
@@ -18083,30 +18047,7 @@ public sealed class MainWindowViewModel : ObservableObject, IAsyncDisposable, IT
         }
     }
 
-    private void QueueLiveFeedbackHeartbeatEvaluation()
-    {
-        if (!isInitialized || isShuttingDown)
-        {
-            return;
-        }
 
-        liveFeedbackHeartbeatService.UpdateState(
-            Settings.LiveFeedbackHeartbeatEnabled,
-            HasRecoverableBroadcasterSession && !broadcasterReconnectRequired,
-            IsBroadcasterLive,
-            string.IsNullOrWhiteSpace(Settings.Broadcaster.DisplayName)
-                ? Settings.Broadcaster.Login
-                : Settings.Broadcaster.DisplayName,
-            Settings.Broadcaster.Login,
-            runtimeConfig.LiveFeedbackHeartbeatEndpoint,
-            AppUpdateVersion,
-            BuildChannel);
-    }
-
-    private Task StopLiveFeedbackHeartbeatAsync()
-    {
-        return liveFeedbackHeartbeatService.StopAsync();
-    }
 
     private void RunOnUi(Action action)
     {
